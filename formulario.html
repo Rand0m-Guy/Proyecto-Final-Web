@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="validacionForm.js"></script>
     <title>Formulario</title>
 </head>
 <body>
-    <form action="validar.php" method="POST" id="registro">
-        <label for="ncompleto">Nombre Completo<span aria-label="required">*</span></label><br>
-        <input type="text" id="ncompleto" name="ncompleto" placeholder="Juan Rubén Pérez Bárcenas" required><br>
+    <form name="registro" action="validar.php" method="POST" id="registro" onsubmit="return validaciones()">
+        <label for="nombre">Nombre(s)<span aria-label="required">*</span></label><br>
+        <input type="text" id="nombre" name="nombre" placeholder="Juan Rubén" required><br>
 
-        <label for="rfc">RFC<span aria-label="required">*</span></label><br>
-        <input type="text" id="rfc" name="rfc" placeholder="XAXX010101AAA07072016_01" required><br>
+        <label for="apellidoP">Apellido Paterno<span aria-label="required">*</span></label><br>
+        <input type="text" id="apellidoP" name="apellidoP" placeholder="Pérez" required><br>
+
+        <label for="apellidoM">Apellido Materno<span aria-label="required">*</span></label><br>
+        <input type="text" id="apellidoM" name="apellidoM" placeholder="Bárcenas" required><br>
+
+        <label for="curp">CURP<span aria-label="required">*</span></label><br>
+        <input type="text" id="curp" name="curp" placeholder="SABC560626MDFLRN09" required><br>
         <fieldset>
             <legend>Dirección</legend>
             <label for="calle">Calle<span aria-label="required">*</span></label><br>
             <input type="text" id="calle" name="calle" placeholder="José Antonio Alzate" required><br>
 
             <label for="num">Número<span aria-label="required">*</span></label><br>
-            <input type="number" id="num" name="num" placeholder="184" required><br>
+            <input type="number" id="num" name="num" placeholder="184" min="1" required><br>
 
             <label for="interior">Interior</label><br>
             <input type="text" id="interior" name="interior" placeholder="9A"><br>
@@ -96,7 +103,7 @@
         <input type="email" id="correo" name="correo" placeholder="jperez@company.com" required><br>
 
         <label for="telefono">Teléfono<span aria-label="required">*</span></label><br>
-        <input type="tel" id="telefono" name="telefono" placeholder="5512345678" required><br>
+        <input type="tel" id="telefono" name="telefono" placeholder="5512345678" minlength="10" pattern="[0-9]{10}" required><br>
 
         <label for="lugar">Lugar<span aria-label="required">*</span></label><br>
             <select id="lugar" name="lugar" required>
@@ -107,12 +114,11 @@
         </select><br>
 
         <label for="fecha">Fecha del Evento<span aria-label="required">*</span></label><br>
-        <input type="date" id="fecha" name="fecha" required><br>
+        <input type="date" id="fecha" name="fecha" onchange="onChangeFecha()" required><br>
 
         <label for="hora">Horario<span aria-label="required">*</span></label><br>
             <select id="hora" name="hora" required>
                 <option value="ninguno">-- Seleccione uno --</option>
-                <option value="PLACEHOLDERBORRAR">?????</option>
         </select><br>
 
         <label for="tipo">Tipo de Evento<span aria-label="required">*</span></label><br>
@@ -141,6 +147,7 @@
 
         <input type="submit" value="Enviar">
     </form>
+<script src="actualizacionDinamica.js"></script>
+
 </body>
-<script src="formularioValidacion.js"></script>
 </html>
