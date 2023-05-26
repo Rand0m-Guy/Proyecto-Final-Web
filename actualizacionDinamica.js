@@ -1,3 +1,4 @@
+// Cambia de municipio a alcaldía
 var entidad = document.getElementById("entidad");
 
 function onChange() {
@@ -43,11 +44,12 @@ entidad.onchange = onChange;
 onChange();
 
 
-
+// Cambia tipo de evento
 
 var tipoEvento = document.getElementById("tipo");
 
 function onChangeTipo() {
+    console.log("Caso base");
     var value = tipoEvento.value;
 
     var otroTxt = document.getElementById("eventootrotxt");
@@ -66,3 +68,51 @@ function onChangeTipo() {
 
 tipoEvento.onchange = onChangeTipo;
 onChangeTipo();
+
+var fechaEvento = document.getElementById("fecha");
+// Pone horarios dependiendo del día de la semana
+function onChangeFecha() {
+    var horaEvento = document.getElementById("hora");
+    var fechaARevisar = new Date(Date.parse(fechaEvento.value.replace(/-/g, " ")));
+    let dia = fechaARevisar.getDay();
+    console.log(fechaEvento);
+    console.log(horaEvento);
+    console.log(fechaARevisar);
+    console.log(dia);
+
+    while(horaEvento.childElementCount !== 1) {
+      horaEvento.removeChild(horaEvento.children[1]);
+    }
+
+    horaEvento.value = "ninguno";
+    if(dia === 0) {
+        var opt = document.createElement('option');
+        opt.value = 9;
+        opt.innerHTML = "9am - 2pm";
+        horaEvento.appendChild(opt);
+    }
+
+    if(dia < 5) {
+        return;
+    }
+
+    if(dia === 5) {
+        var opt1 = document.createElement('option');
+        opt1.value = 12;
+        opt1.innerHTML = "12pm - 5pm";
+        horaEvento.appendChild(opt1);
+        var opt2 = document.createElement('option');
+        opt2.value = 7;
+        opt2.innerHTML = "7pm - 12am";
+        horaEvento.appendChild(opt2);
+        return;
+    }
+
+    var opt3 = document.createElement('option');
+    opt3.value = 2;
+    opt3.innerHTML = "2pm - 7pm";
+    horaEvento.appendChild(opt3);
+}
+
+fechaEvento.onchange = onChangeFecha;
+onChangeFecha();
