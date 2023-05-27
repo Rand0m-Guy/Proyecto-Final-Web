@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<script type="text/javascript" src="validacionForm.js"></script>-->
+    <title>Comprobante</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&family=Sacramento&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <header>
+            <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary  navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Rythm</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Comprobante</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Agendar Evento</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Administrador</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>  
+        </header>
+
+
+        <main>
+            <section class=" contenedor  container my-3" id="contComprobante" >
+                <div >
+                    <h1>Comprobante</h1>
+                </div>
+                <div class="recuperar">
+                    <p>En caso de haber perdido tu comprobante al generar la cita  puedes recuperarlo ingresando tu <span>CURP</span> y la <span>fecha del evento</span></p>
+                    <input type="text" placeholder="Ejem.PEBJ031015HDFRRNA9-10-05-2023" class="input-group mb-3">
+                </div>
+                <div class="col-md-4 col-lg-4 col-xl-4 py-4 mx-auto">
+                    <button type="submit" id="botonGenerar" class="boton-submit ">Generar comprobante</button>
+                </div>
+            </section>
+            <section class="pregunta  col-sm-12 col-md-4 col-lg-4 col-xl-4 py-4">
+                <a href=""><p>¿Aún no tienes una cita? agendala aqui</p></a>
+            </section>
+        </main>
+
+
+
+        <footer>
+            <div class="">
+                <footer class="my-4">
+                    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                        <li class="nav-item"><span class="nav-link px-5 text-body-secondary">Contáctanos: 55 12345678</span></li>
+                        <li class="nav-item"><span class="nav-link px-5 text-body-secondary">Encuéntranos en <a class="instagram" href="#">@NoTenemosIG</a></span></li>
+                    </ul>
+                </footer>
+            </div>
+        </footer>
+    </body>
+</html>
