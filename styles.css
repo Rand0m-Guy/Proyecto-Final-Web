@@ -99,17 +99,17 @@ footer .instagram {
 
 
 /*titulos y subtitulos*/
-h1{
+#contAdmin h1{
     font-family: 'Quicksand', sans-serif;
     margin-left: 2%;
     box-sizing: border-box;
     padding-top: 4rem;
     color: #7D4691;
-    
+    font-size: 2.5em;
 }
 
 /*formulario*/
-input
+.loginAdmin input
 {
     font-family: 'Nunito', sans-serif;
     box-sizing: border-box;    
@@ -121,26 +121,37 @@ input
     text-indent:2%;
 }
 
-input:focus{
+.loginAdmin input:focus{
     outline: none
 }
 
 .boton-submit{
-     
-background: #26BFC7;
-border-radius: 10px;
-font-size: larger;
-font-weight: bold;
-color: #fff;
-border: none;
-cursor: pointer;
-justify-content:center;
-font-family: 'Quicksand', sans-serif;
-
-
+    background: #26BFC7;
+    border-radius: 10px;
+    font-size: larger;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    justify-content:center;
+    font-family: 'Quicksand', sans-serif;
+    width: 15vw !important;
 }
 
-label{
+@media only screen and (max-width: 570px) {
+    .boton-submit{
+        width: 30vw !important;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    #contAdmin h1{
+        font-size: 1.3em;
+    }
+}
+
+
+.loginAdmin label{
     font-family: 'Quicksand', sans-serif;
     color:#FFD700;
 }
@@ -153,6 +164,8 @@ label{
     border-radius: 20px;    
     background-color: rgba(28, 33, 51, 0.5);
     margin:auto;
+    backdrop-filter: blur(15px);
+    
 }
 
 /*links*/
@@ -211,7 +224,7 @@ a{
 /*admin*/
 #contAdmin{
     
-height: 600px;
+height: 550px;
 margin: auto;
   
 }
@@ -219,8 +232,8 @@ margin: auto;
 .loginAdmin{
     margin-left: 6%;
     margin-right: 6%;
-    padding-top: 7%;
-    height: 55%;
+    padding-top: 2%;
+    height: 50%;
     box-sizing: border-box; 
 }
 
