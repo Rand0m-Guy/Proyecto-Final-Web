@@ -153,6 +153,8 @@ label{
     border-radius: 20px;    
     background-color: rgba(28, 33, 51, 0.5);
     margin:auto;
+    backdrop-filter: blur(15px);
+    
 }
 
 /*links*/
@@ -211,7 +213,7 @@ a{
 /*admin*/
 #contAdmin{
     
-height: 600px;
+height: 550px;
 margin: auto;
   
 }
@@ -219,8 +221,8 @@ margin: auto;
 .loginAdmin{
     margin-left: 6%;
     margin-right: 6%;
-    padding-top: 7%;
-    height: 55%;
+    padding-top: 2%;
+    height: 50%;
     box-sizing: border-box; 
 }
 
