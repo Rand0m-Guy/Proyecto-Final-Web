@@ -1,0 +1,234 @@
+/*video*/
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+/*body*/
+
+
+/*navbar*/
+.navbar {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #1C2133 !important;
+}
+
+.navbar-brand {
+    font-family: 'Sacramento', cursive;
+    font-size: 1.5em;
+    margin-left: 2vw;
+
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 30px #26BFC7,
+        0 0 40px #26BFC7,
+        0 0 60px #26BFC7,
+        0 0 80px #26BFC7,
+        0 0 100px #26BFC7;
+}
+
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+      text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 30px #26BFC7,
+        0 0 40px #26BFC7,
+        0 0 60px #26BFC7,
+        0 0 80px #26BFC7,
+        0 0 100px #26BFC7;
+    }
+    20%, 24%, 55% {       
+      text-shadow: none;
+    }
+}
+
+.navbar-brand:hover {
+    animation: flicker 1.5s infinite alternate; 
+    color: white !important;
+}
+
+.navbar a {
+    color: white;
+}
+
+.navbar .active {
+    color: #FFD700 !important;
+}
+
+.navbar .nav-link {
+    font-size: .9em;
+    margin-right: 2vw;
+}
+
+.navbar .nav-link:hover {
+    color: #EB0CDC !important;
+}
+
+.navbar button {
+    border: none;
+    color: rgba(0,0,0,0);
+}
+
+.navbar-toggler-icon {
+    border-color: white !important;
+}
+/*footer*/
+footer {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #1C2133 !important;
+    top: 100%;
+
+}
+
+footer .text-body-secondary {
+    color: white !important;
+}
+
+footer .instagram {
+    color: #EB0CDC !important;
+    text-decoration: none !important;
+}
+
+
+
+/*titulos y subtitulos*/
+h1{
+    font-family: 'Quicksand', sans-serif;
+    margin-left: 2%;
+    box-sizing: border-box;
+    padding-top: 4rem;
+    color: #7D4691;
+    
+}
+
+/*formulario*/
+input
+{
+    font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;    
+    background: rgba(28, 33, 51, 0.5);
+    border: 2px solid #EB0CDC;
+    border-radius: 10px;
+    color: #fff;
+    height: 50px;
+    text-indent:2%;
+}
+
+input:focus{
+    outline: none
+}
+
+.boton-submit{
+     
+background: #26BFC7;
+border-radius: 10px;
+font-size: larger;
+font-weight: bold;
+color: #fff;
+border: none;
+cursor: pointer;
+justify-content:center;
+font-family: 'Quicksand', sans-serif;
+
+
+}
+
+label{
+    font-family: 'Quicksand', sans-serif;
+    color:#FFD700;
+}
+
+/*recuadros: section*/
+
+.contenedor{
+    bottom: 0;
+    box-sizing: border-box;
+    border-radius: 20px;    
+    background-color: rgba(28, 33, 51, 0.5);
+    margin:auto;
+}
+
+/*links*/
+a{
+    color:#FFD700;
+}
+
+
+
+/*ID's y clases especificas*/
+/*Pagina Comprobante*/
+
+
+.recuperar{
+    margin-left: 6%;
+    margin-right: 6%;
+    padding-top: 2%;
+    height: 55%;
+    box-sizing: border-box;  
+    
+}
+
+.recuperar p{
+    font-family: 'Quicksand', sans-serif;
+    margin-bottom: 3rem;
+    font-size: larger;
+    color:#fff
+  
+}
+
+.recuperar span{
+    color: #fdd700;
+}
+
+#contComprobante{
+    
+
+    height: 450px;
+    margin: auto;
+      
+    }
+.pregunta{
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#botonGenerar{
+    width: 317px;
+    height: 45px;
+    margin: auto;
+   
+}
+/*admin*/
+#contAdmin{
+    
+height: 600px;
+margin: auto;
+  
+}
+
+.loginAdmin{
+    margin-left: 6%;
+    margin-right: 6%;
+    padding-top: 7%;
+    height: 55%;
+    box-sizing: border-box; 
+}
+
+#botonAdmin{
+    width: 200px;
+    height: 45px;
+    
+   
+}
+/*principañ*/
+
