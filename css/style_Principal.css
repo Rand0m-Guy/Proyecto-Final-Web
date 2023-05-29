@@ -11,7 +11,7 @@
 body{
     padding-bottom: 6em;
     min-height: 100vh;
-    
+    overflow-x: hidden;
 }
 
 /*navbar*/
