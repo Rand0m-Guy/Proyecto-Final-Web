@@ -7,7 +7,20 @@
     min-height: 100%;
   }
 /*body*/
+.bodyRegistro{
+    padding-bottom: 6em;
+    min-height: 100vh;
+}
 
+.bodyAdmin{
+    padding-bottom: 8em;
+    min-height: 100vh;
+}
+
+body{
+    padding-bottom: 4em;
+    min-height: 100vh;
+}
 
 /*navbar*/
 .navbar {
@@ -81,9 +94,11 @@
 }
 
 /*footer*/
+
 footer {
     font-family: 'Quicksand', sans-serif;
     background-color: #1C2133 !important;
+    padding: 1em;
 }
 
 footer .text-body-secondary {
@@ -98,7 +113,7 @@ footer .instagram {
 
 
 /*titulos y subtitulos*/
-#contAdmin h1{
+h1{
     font-family: 'Quicksand', sans-serif;
     margin-left: 2%;
     box-sizing: border-box;
@@ -108,7 +123,7 @@ footer .instagram {
 }
 
 /*formulario*/
-.loginAdmin input
+input, select
 {
     font-family: 'Nunito', sans-serif;
     box-sizing: border-box;    
@@ -120,8 +135,53 @@ footer .instagram {
     text-indent:2%;
 }
 
-.loginAdmin input:focus{
+option {
+    background: #7D4691 !important;
+}
+
+select, .input-date {
+    padding-top: 6px !important;
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+input:focus, select:focus{
     outline: none
+}
+
+.line-bottom {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 0.1vw;
+}
+
+.boton-submit-f{
+    background: #26BFC7;
+    border-radius: 10px;
+    font-size: larger;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    justify-content:center;
+    font-family: 'Quicksand', sans-serif;
+    width: 15vw !important;
+    margin-left: 40vw;
+}
+
+#contComprobante{
+    height: 520px;
+    margin: auto;      
+}
+
+#contComprobante h1{
+    font-family: 'Quicksand', sans-serif;
+    margin-left: 2%;
+    box-sizing: border-box;
+    padding-top: 4rem;
+    color: #7D4691;
+    font-size: 2.5em;
 }
 
 .boton-submit{
@@ -141,22 +201,77 @@ footer .instagram {
     .boton-submit{
         width: 30vw !important;
     }
+    .boton-submit-f{
+        width: 30vw !important;
+    }
+    
+}
+
+@media only screen and (max-width: 690px) {
+    .bodyRegistro{
+        padding-bottom: 8em;
+        min-height: 100vh;
+    }
 }
 
 @media only screen and (max-width: 420px) {
     #contAdmin h1{
         font-size: 1.3em;
     }
+
+    #contComprobante h1{
+        font-size: 1.3em;
+    }
+
+    #contComprobante{
+        height: 590px;
+        margin: auto;
+        
+    }
+    .bodyRegistro{
+        padding-bottom: 12em;
+        min-height: 100vh;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    body{
+        padding-bottom: 8em;
+        min-height: 100vh;
+    }
+    .bodyAdmin{
+        padding-bottom: 12em;
+        min-height: 100vh;
+    }
+}
+
+@media only screen and (max-width: 312px) {
+    #contComprobante{
+        height: 700px;
+        margin: auto;
+        
+    }
+    body{
+        padding-bottom: 10em;
+        min-height: 100vh;
+    }
 }
 
 
-.loginAdmin label{
+label{
     font-family: 'Quicksand', sans-serif;
     color:#FFD700;
 }
 
-/*recuadros: section*/
+#contForm label {
+    margin-bottom: 0.3vw;
+}
 
+#contForm input, #contForm select {
+    height: 40px;
+}
+
+/*recuadros: section*/
 .contenedor{
     bottom: 0;
     box-sizing: border-box;
@@ -181,12 +296,11 @@ a{
     padding-top: 2%;
     height: 55%;
     box-sizing: border-box;  
-    
 }
 
 .recuperar p{
     font-family: 'Quicksand', sans-serif;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     font-size: larger;
     color:#fff
   
@@ -196,11 +310,6 @@ a{
     color: #fdd700;
 }
 
-#contComprobante{
-    height: 450px;
-    margin: auto;
-      
-    }
 .pregunta{
     width: 100%;
     height: 2rem;
@@ -211,17 +320,15 @@ a{
 
 #botonGenerar{
     width: 317px;
-    height: 45px;
+    height: 60px;
     margin: auto;
    
 }
 
 /*admin*/
 #contAdmin{
-    
-    height: 70vh;
+    height: 75vh;
     margin: auto;
-  
 }
 
 .loginAdmin{
@@ -234,177 +341,13 @@ a{
 
 #botonAdmin{
     width: 200px;
-    height: 45px;  
+    height: 45px;
+    
    
 }
+/*principañ*/
 
-
-/*principal*/
-
-#contenedorUno{
-    font-family: 'Quicksand', sans-serif;
-    top: 20%;
-    margin-bottom: 50%;
-}
-
-
-#contenedorUno img{
-    margin-right: 6%;
-    margin: auto;
-    display: block;
-    border-color: #EB0CDC;
-}
-.clearfix{overflow:auto}
-
-#contenedorDos{
-    font-family: 'Quicksand', sans-serif;
-}
-
-#contenedorDos ul{
-    
-    color: #ffff;
-
-}
-
-#contenedorDos p{
-  
-    color: #26bfc7;
-    text-align: center;
-}
-#tituloPrin{
-    font-family: 'Quicksand', sans-serif;
-    text-align: center;
-    
-    min-height: 1px;
-}
-
-.backImg{
-    background-image: url(img/principal-1.png);
-    padding-top:0%;
-    height: 490px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-}
-
-
-#tituloPrin input{
-    margin-top: 2rem;
-    background-color: #fdd700;
-    border-radius: 10px;
-    border-color: none;
-    color:#7D4691;
-    height:50px;
-    width:250px;
-    font-family: 'Quicksand', sans-serif;
-
-    
-}
-#tituloPrin input:focus{
-    outline: none;
-}
-
-.cssanimation, .cssanimation span {
-    animation-duration: 1s;
-    animation-fill-mode: both;
-}
-
-.cssanimation span { display: inline-block }
-
-.fadeInBottom { animation-name: fadeInBottom }
-@keyframes fadeInBottom {
-    from {
-        opacity: 0;
-        transform: translateY(100%);
-    }
-    to { opacity: 1 }
-} 
-
-
-
-#tituloPrin h1{
-    font-family: 'Quicksand', sans-serif;
-    font-size: 7vw;
-    color: #fff;
-    text-shadow:
-        0 0 7px #fff,
-        0 0 10px #fff,
-        0 0 21px #fff,
-        0 0 30px #26BFC7,
-        0 0 40px #26BFC7,
-        0 0 60px #26BFC7,
-        0 0 80px #26BFC7,
-        0 0 100px #26BFC7;
-    margin-bottom: 4rem;
-}
-
-
-
-.backColor{
-    background-color: rgba(28, 33, 51, 0.8);
-}
-
-section{
-    display: flex;
-    width: 600px;
-    height: 430px;
-}
-
-section img{
-    width: 0px;
-    flex-grow: 1;
-    object-fit: cover;
-    opacity: 0.8;
-    transition: .5s ease;
-}
-
-section img:hover{
-    cursor: crosshair;
-    width: 300px;
-    opacity: 1;
-    filter: contrast(120%);
-}
-
-h4{
-    font-family: 'Quicksand', sans-serif;
-    color: #fff;
-    text-align: center;
-
-}
-
-.img-flecha{
-    list-style: none;
-    list-style-image: url("img/palomita-c.png");
-}
-
-#parrafoUno{
-    font-family: 'Quicksand', sans-serif;
-    margin-top: 10%;
-    margin-bottom: 6%;
-}
-
-#parrafoUno h4{
-    color: #26BFC7;
-    
-}
-#parrafoUno p{
-    color: #fff;
-    margin-left: 4rem;
-    margin-right:4rem ;
-}
-
-h1{
-    text-align: center;
-    font-family: 'Quicksand', sans-serif;
-    color: #fff;
-    text-shadow:
-        0 0 7px #fff,
-        0 0 10px #fff,
-        0 0 21px #fff,
-        0 0 30px #FFD700,
-        0 0 40px #FFD700,
-        0 0 60px #FFD700,
-        0 0 80px #FFD700
-        0 0 100px #FFD700;
+/*Form*/
+#contForm {
+    width: 90vw !important;
 }
