@@ -15,7 +15,7 @@
     <script src="js/bootstrap.bundle.min.js" ></script>
 
     </head>
-    <body>
+    <body class="position-relative">
         <video autoplay muted loop id="myVideo">
             <source src="video/Video_BG.mp4" type="video/mp4">
           </video>
@@ -43,26 +43,25 @@
 
 
         <main>
-            <section class=" contenedor w-75 p-3 container my-4 col-sm-12 position-relative" id="contComprobante" >
-                <div >
-                    <h1>Comprobante</h1>
-                </div>
-                <div class="recuperar">
-                    <p>En caso de haber perdido tu comprobante al generar la cita  puedes recuperarlo ingresando tu <span>CURP</span> y la <span>fecha del evento</span></p>
-                    <input type="text" placeholder="Ejem.PEBJ031015HDFRRNA9-10-05-2023" class="input-group mb-3" required>
-                </div>
-                <div class="col-md-4 col-lg-4 col-xl-4 py-4 mx-auto">
-                    <button type="submit" id="botonGenerar" class="boton-submit ">Generar comprobante</button>
-                </div>
+            <section class=" contenedor w-75 p-3 container my-4 position-relative" id="contComprobante" >
+                <h1>Comprobante</h1>                
+                <form action="" method="post" id="recuperarComprobante" name="recuperarComprobante">
+                    <fieldset>
+                        <div class="recuperar">
+                            <label for="folio"><p>En caso de haber perdido tu comprobante al generar la cita  puedes recuperarlo ingresando tu <span>CURP</span> y la <span>fecha del evento</span></p></label>
+                            <input id="folio" name="folio" type="text" placeholder="Ejem.PEBJ031015HDFRRNA9-10-05-2023" class="input-group mb-3" required><br><br>
+                        </div>
+                    </fieldset>
+                    <button type="submit" id="botonGenerar" class="boton-submit position-absolute  start-50 translate-middle-x" value="Generar comprobante">Generar comprobante</button>
+                </form>
             </section>
             <section class="pregunta  col-sm-12 col-md-4 col-lg-4 col-xl-4 py-4">
                 <a href=""><p>¿Aún no tienes una cita? agendala aqui</p></a>
             </section>
         </main>
-
-        <div class="position-absolute container-fluid">
-            <footer class="my-4">
-                <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <div class="footer position-absolute fixed-bottom">
+            <footer>
+                <ul class="nav justify-content-center pb-3 ">
                     <li class="nav-item"><span class="nav-link px-5 text-body-secondary">Contáctanos: 55 12345678</span></li>
                     <li class="nav-item"><span class="nav-link px-5 text-body-secondary">Encuéntranos en <a class="instagram" href="#">@NoTenemosIG</a></span></li>
                 </ul>
