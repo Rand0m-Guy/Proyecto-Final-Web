@@ -14,16 +14,12 @@
 
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
+  <body class="position-relative">
     
     <!-- Navbar -->  
     <video autoplay muted loop id="myVideo">
         <source src="video/Video_BG.mp4" type="video/mp4">
       </video>
-    <header>
-                       
-              
-            
         <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary  navbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Rythm</a>
@@ -45,30 +41,29 @@
                 </div>
         </div>
     </nav>
-    </header>
-    <br>
-    
-    <!-- Div para el formulario -->
-    <section class=" contenedor w-75 p-3  container my-3 position-relative"  id="contAdmin" >
-        <h1>Administrador</h1>
-        <form name="loginAdmin" action="" method="post" id="loginAdmin">
-            <fieldset>
-                <div class="loginAdmin ">
-                    <label for="usuario" class="">Usuario<span aria-label="required">*</span></label><br><br>
-                    <input type="text" id="usuario" name="usuario" placeholder="Juan Rubén" required class="input-group mb-3"><br><br>
-
-                    <label for="contra">Contraseña<span aria-label="required">*</span></label><br><br>
-                    <input type="password" id="contra" name="contra" required class="input-group mb-3"><br><br>
-                </div>
-            </fieldset>
-            <input type="submit" id="botonAdmin" class="boton-submit  position-absolute  start-50 translate-middle-x" value="Entrar"></input>
-        </form>
-    </section>
+    <div class="contenido_Completo">    
+        <!-- Div para el formulario -->
+        <section class=" contenedor w-75 p-3  container my-3 position-relative"  id="contAdmin" >
+            <h1>Administrador</h1>
+            <form name="loginAdmin" action="" method="post" id="loginAdmin">
+                <fieldset>
+                    <div class="loginAdmin ">
+                        <label for="usuario" class="">Usuario<span aria-label="required">*</span></label><br><br>
+                        <input type="text" id="usuario" name="usuario" placeholder="Juan Rubén" required class="input-group mb-3"><br>
+                        <label for="contra">Contraseña<span aria-label="required">*</span></label><br><br>
+                        <input type="password" id="contra" name="contra" required class="input-group mb-3"><br>
+                    </div>
+                </fieldset>
+                <input type="submit" id="botonAdmin" class="boton-submit  position-absolute  start-50 translate-middle-x" value="Entrar"></input>
+            </form>
+        </section>
+    </div>
+                    
 
     <!-- footer -->
-    <div class="position-absolute container-fluid">
-        <footer class="my-4">
-            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+    <div class="footer position-absolute fixed-bottom">
+        <footer>
+            <ul class="nav justify-content-center pb-3 ">
                 <li class="nav-item"><span class="nav-link px-5 text-body-secondary">Contáctanos: 55 12345678</span></li>
                 <li class="nav-item"><span class="nav-link px-5 text-body-secondary">Encuéntranos en <a class="instagram" href="#">@NoTenemosIG</a></span></li>
             </ul>

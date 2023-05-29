@@ -7,7 +7,10 @@
     min-height: 100%;
   }
 /*body*/
-
+body{
+    padding-bottom: 4em;
+    min-height: 100vh;
+}
 
 /*navbar*/
 .navbar {
@@ -80,11 +83,11 @@
     border-color: white !important;
 }
 /*footer*/
+
 footer {
     font-family: 'Quicksand', sans-serif;
     background-color: #1C2133 !important;
-    top: 100%;
-
+    padding: 1em;
 }
 
 footer .text-body-secondary {
@@ -100,6 +103,20 @@ footer .instagram {
 
 /*titulos y subtitulos*/
 #contAdmin h1{
+    font-family: 'Quicksand', sans-serif;
+    margin-left: 2%;
+    box-sizing: border-box;
+    padding-top: 2rem;
+    color: #7D4691;
+    font-size: 2.5em;
+}
+
+#contComprobante{
+    height: 520px;
+    margin: auto;      
+}
+
+#contComprobante h1{
     font-family: 'Quicksand', sans-serif;
     margin-left: 2%;
     box-sizing: border-box;
@@ -148,6 +165,35 @@ footer .instagram {
     #contAdmin h1{
         font-size: 1.3em;
     }
+
+    #contComprobante h1{
+        font-size: 1.3em;
+    }
+
+    #contComprobante{
+        height: 590px;
+        margin: auto;
+        
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    body{
+        padding-bottom: 8em;
+        min-height: 100vh;
+    }
+}
+
+@media only screen and (max-width: 312px) {
+    #contComprobante{
+        height: 700px;
+        margin: auto;
+        
+    }
+    body{
+        padding-bottom: 10em;
+        min-height: 100vh;
+    }
 }
 
 
@@ -179,18 +225,18 @@ a{
 /*Pagina Comprobante*/
 
 
+
 .recuperar{
     margin-left: 6%;
     margin-right: 6%;
     padding-top: 2%;
     height: 55%;
     box-sizing: border-box;  
-    
 }
 
 .recuperar p{
     font-family: 'Quicksand', sans-serif;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     font-size: larger;
     color:#fff
   
@@ -200,13 +246,21 @@ a{
     color: #fdd700;
 }
 
-#contComprobante{
-    
+.recuperar input{
+    font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;    
+    background: rgba(28, 33, 51, 0.5);
+    border: 2px solid #EB0CDC;
+    border-radius: 10px;
+    color: #fff;
+    height: 50px;
+    text-indent:2%;
+}
 
-    height: 450px;
-    margin: auto;
-      
-    }
+.recuperar input:focus{
+    outline: none;
+}
+
 .pregunta{
     width: 100%;
     height: 2rem;
@@ -217,14 +271,14 @@ a{
 
 #botonGenerar{
     width: 317px;
-    height: 45px;
+    height: 60px;
     margin: auto;
    
 }
 /*admin*/
 #contAdmin{
     
-height: 550px;
+height: 70vh;
 margin: auto;
   
 }
