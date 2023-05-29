@@ -82,6 +82,7 @@ body{
 .navbar-toggler-icon {
     border-color: white !important;
 }
+
 /*footer*/
 
 footer {
@@ -211,7 +212,6 @@ footer .instagram {
     background-color: rgba(28, 33, 51, 0.5);
     margin:auto;
     backdrop-filter: blur(15px);
-    
 }
 
 /*links*/
@@ -223,9 +223,6 @@ a{
 
 /*ID's y clases especificas*/
 /*Pagina Comprobante*/
-
-
-
 .recuperar{
     margin-left: 6%;
     margin-right: 6%;
@@ -275,12 +272,11 @@ a{
     margin: auto;
    
 }
+
 /*admin*/
 #contAdmin{
-    
-height: 70vh;
-margin: auto;
-  
+    height: 70vh;
+    margin: auto;
 }
 
 .loginAdmin{
