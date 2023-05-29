@@ -19,3 +19,6 @@ section img:hover{
     filter: contrast(120%);
 }
 
+h4{
+    color: #fff;
+}
