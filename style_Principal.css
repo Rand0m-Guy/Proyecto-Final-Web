@@ -1,0 +1,410 @@
+/*video*/
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+/*body*/
+
+
+/*navbar*/
+.navbar {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #1C2133 !important;
+}
+
+.navbar-brand {
+    font-family: 'Sacramento', cursive;
+    font-size: 1.5em;
+    margin-left: 2vw;
+
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 30px #26BFC7,
+        0 0 40px #26BFC7,
+        0 0 60px #26BFC7,
+        0 0 80px #26BFC7,
+        0 0 100px #26BFC7;
+}
+
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+      text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 30px #26BFC7,
+        0 0 40px #26BFC7,
+        0 0 60px #26BFC7,
+        0 0 80px #26BFC7,
+        0 0 100px #26BFC7;
+    }
+    20%, 24%, 55% {       
+      text-shadow: none;
+    }
+}
+
+.navbar-brand:hover {
+    animation: flicker 1.5s infinite alternate; 
+    color: white !important;
+}
+
+.navbar a {
+    color: white;
+}
+
+.navbar .active {
+    color: #FFD700 !important;
+}
+
+.navbar .nav-link {
+    font-size: .9em;
+    margin-right: 2vw;
+}
+
+.navbar .nav-link:hover {
+    color: #EB0CDC !important;
+}
+
+.navbar button {
+    border: none;
+    color: rgba(0,0,0,0) !important;
+}
+
+.navbar-toggler-icon {
+    border-color: white !important;
+}
+
+/*footer*/
+footer {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #1C2133 !important;
+}
+
+footer .text-body-secondary {
+    color: white !important;
+}
+
+footer .instagram {
+    color: #EB0CDC !important;
+    text-decoration: none !important;
+}
+
+
+
+/*titulos y subtitulos*/
+#contAdmin h1{
+    font-family: 'Quicksand', sans-serif;
+    margin-left: 2%;
+    box-sizing: border-box;
+    padding-top: 2rem;
+    color: #7D4691;
+    font-size: 2.5em;
+}
+
+/*formulario*/
+.loginAdmin input
+{
+    font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;    
+    background: rgba(28, 33, 51, 0.5);
+    border: 2px solid #EB0CDC;
+    border-radius: 10px;
+    color: #fff;
+    height: 50px;
+    text-indent:2%;
+}
+
+.loginAdmin input:focus{
+    outline: none
+}
+
+.boton-submit{
+    background: #26BFC7;
+    border-radius: 10px;
+    font-size: larger;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    justify-content:center;
+    font-family: 'Quicksand', sans-serif;
+    width: 15vw !important;
+}
+
+@media only screen and (max-width: 570px) {
+    .boton-submit{
+        width: 30vw !important;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    #contAdmin h1{
+        font-size: 1.3em;
+    }
+}
+
+
+.loginAdmin label{
+    font-family: 'Quicksand', sans-serif;
+    color:#FFD700;
+}
+
+/*recuadros: section*/
+
+.contenedor{
+    bottom: 0;
+    box-sizing: border-box;
+    border-radius: 20px;    
+    background-color: rgba(28, 33, 51, 0.5);
+    margin:auto;
+    backdrop-filter: blur(15px);
+}
+
+/*links*/
+a{
+    color:#FFD700;
+}
+
+
+
+/*ID's y clases especificas*/
+/*Pagina Comprobante*/
+.recuperar{
+    margin-left: 6%;
+    margin-right: 6%;
+    padding-top: 2%;
+    height: 55%;
+    box-sizing: border-box;  
+    
+}
+
+.recuperar p{
+    font-family: 'Quicksand', sans-serif;
+    margin-bottom: 3rem;
+    font-size: larger;
+    color:#fff
+  
+}
+
+.recuperar span{
+    color: #fdd700;
+}
+
+#contComprobante{
+    height: 450px;
+    margin: auto;
+      
+    }
+.pregunta{
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#botonGenerar{
+    width: 317px;
+    height: 45px;
+    margin: auto;
+   
+}
+
+/*admin*/
+#contAdmin{
+    
+    height: 70vh;
+    margin: auto;
+  
+}
+
+.loginAdmin{
+    margin-left: 6%;
+    margin-right: 6%;
+    padding-top: 2%;
+    height: 50%;
+    box-sizing: border-box; 
+}
+
+#botonAdmin{
+    width: 200px;
+    height: 45px;  
+   
+}
+
+
+/*principal*/
+
+#contenedorUno{
+    font-family: 'Quicksand', sans-serif;
+    top: 20%;
+    margin-bottom: 50%;
+}
+
+
+#contenedorUno img{
+    margin-right: 6%;
+    margin: auto;
+    display: block;
+    border-color: #EB0CDC;
+}
+.clearfix{overflow:auto}
+
+#contenedorDos{
+    font-family: 'Quicksand', sans-serif;
+}
+
+#contenedorDos ul{
+    
+    color: #ffff;
+
+}
+
+#contenedorDos p{
+  
+    color: #26bfc7;
+    text-align: center;
+}
+#tituloPrin{
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    
+    min-height: 1px;
+}
+
+.backImg{
+    background-image: url(img/principal-1.png);
+    padding-top:0%;
+    height: 490px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+
+#tituloPrin input{
+    margin-top: 2rem;
+    background-color: #fdd700;
+    border-radius: 10px;
+    border-color: none;
+    color:#7D4691;
+    height:50px;
+    width:250px;
+    font-family: 'Quicksand', sans-serif;
+
+    
+}
+#tituloPrin input:focus{
+    outline: none;
+}
+
+.cssanimation, .cssanimation span {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.cssanimation span { display: inline-block }
+
+.fadeInBottom { animation-name: fadeInBottom }
+@keyframes fadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to { opacity: 1 }
+} 
+
+
+
+#tituloPrin h1{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 7vw;
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 30px #26BFC7,
+        0 0 40px #26BFC7,
+        0 0 60px #26BFC7,
+        0 0 80px #26BFC7,
+        0 0 100px #26BFC7;
+    margin-bottom: 4rem;
+}
+
+
+
+.backColor{
+    background-color: rgba(28, 33, 51, 0.8);
+}
+
+section{
+    display: flex;
+    width: 600px;
+    height: 430px;
+}
+
+section img{
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: .5s ease;
+}
+
+section img:hover{
+    cursor: crosshair;
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+h4{
+    font-family: 'Quicksand', sans-serif;
+    color: #fff;
+    text-align: center;
+
+}
+
+.img-flecha{
+    list-style: none;
+    list-style-image: url("img/palomita-c.png");
+}
+
+#parrafoUno{
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 10%;
+    margin-bottom: 6%;
+}
+
+#parrafoUno h4{
+    color: #26BFC7;
+    
+}
+#parrafoUno p{
+    color: #fff;
+    margin-left: 4rem;
+    margin-right:4rem ;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 30px #FFD700,
+        0 0 40px #FFD700,
+        0 0 60px #FFD700,
+        0 0 80px #FFD700
+        0 0 100px #FFD700;
+}
