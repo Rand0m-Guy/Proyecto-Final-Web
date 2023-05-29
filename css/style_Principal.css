@@ -8,6 +8,11 @@
   }
 /*body*/
 
+body{
+    padding-bottom: 6em;
+    min-height: 100vh;
+    
+}
 
 /*navbar*/
 .navbar {
@@ -82,6 +87,7 @@
 
 /*footer*/
 footer {
+    margin-top: auto;
     font-family: 'Quicksand', sans-serif;
     background-color: #1C2133 !important;
 }
@@ -279,7 +285,7 @@ a{
 }
 
 .backImg{
-    background-image: url(img/principal-1.png);
+    background-image: url(../img/principal-1.png);
     padding-top:0%;
     height: 490px;
     background-position: center;
@@ -375,7 +381,7 @@ h4{
 
 .img-flecha{
     list-style: none;
-    list-style-image: url("img/palomita-c.png");
+    list-style-image: url("../img/palomita-c.png");
 }
 
 #parrafoUno{
@@ -407,4 +413,8 @@ h1{
         0 0 60px #FFD700,
         0 0 80px #FFD700
         0 0 100px #FFD700;
+}
+
+.galeriaUno{
+    color: white;
 }
