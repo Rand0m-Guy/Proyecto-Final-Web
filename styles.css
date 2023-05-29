@@ -243,6 +243,12 @@ input:focus, select:focus{
         padding-bottom: 12em;
         min-height: 100vh;
     }
+
+    #botonComprobante{
+        width: 200px !important;
+        height: 60px;
+        margin: auto;
+    }
 }
 
 @media only screen and (max-width: 312px) {
@@ -323,6 +329,19 @@ a{
     height: 60px;
     margin: auto;
    
+}
+
+#botonComprobante{
+    width: 300px !important;
+    height: 60px;
+    margin: auto;
+}
+
+@media only screen and (max-width: 450px) {
+    #botonComprobante{
+        width: 150px !important;
+        font-size: .8em;
+    }
 }
 
 /*admin*/
