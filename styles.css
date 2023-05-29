@@ -274,6 +274,7 @@ a{
 #tituloPrin{
     font-family: 'Quicksand', sans-serif;
     text-align: center;
+    
     min-height: 1px;
 }
 
@@ -324,7 +325,7 @@ a{
 
 #tituloPrin h1{
     font-family: 'Quicksand', sans-serif;
-    font-size: 95px;
+    font-size: 7vw;
     color: #fff;
     text-shadow:
         0 0 7px #fff,
@@ -369,6 +370,7 @@ h4{
     font-family: 'Quicksand', sans-serif;
     color: #fff;
     text-align: center;
+
 }
 
 .img-flecha{
