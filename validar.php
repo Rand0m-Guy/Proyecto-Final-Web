@@ -8,10 +8,11 @@ $tel=$_REQUEST['telefono'];
 $calle=$_REQUEST['calle'];
 $numex=$_REQUEST['num'];
 $numin=$_REQUEST['interior'];
-$codp=$_REQUEST['colonia'];
-$colonia=$_REQUEST['cp'];
+$codp=$_REQUEST['cp'];
+$colonia=$_REQUEST['colonia'];
 $estado=$_REQUEST['entidad'];
 $municipio=$_REQUEST['municipio'];
+$alcald=$_REQUEST['alcaldia'];
 $lugar=$_REQUEST['lugar'];
 $fecha=$_REQUEST['fecha'];
 $horario=$_REQUEST['hora'];
@@ -19,9 +20,7 @@ $nump=$_REQUEST['numpersonas'];
 $tipo=$_REQUEST['tipo'];
 $otrot=$_REQUEST['eventootro'];
 $menu=$_REQUEST['menu'];
-
-
-$folio=$fecha.$curp;
+$folio=$curp.$fecha;
 //variable para guardar el municipio o alcaldía en la DB
 $alc_mun;
 $evt;
@@ -58,8 +57,10 @@ elseif ($lugar=='salonb') {
 if(empty($otrot))
 {
 	echo "Tipo de evento: $tipo <br>";
+	$evt=$tipo;
 }else{
 	echo "Tipo de evento: $otrot <br>";
+	$evt=$otro;
 }
 echo "Numero de personas: $nump <br>";
 echo "Menu: $menu <br>";
@@ -68,7 +69,30 @@ echo "CURP: $curp <br>";
 echo "Correo: $mail <br> Telefono: $tel <br>";
 echo "</body>";
 
+
+session_start();
+
+//Sesiones para traslado a BD
+$_SESSION['folio']=$folio;
+$_SESSION['nombre']=$nombre;
+$_SESSION['ap']=$appat;
+$_SESSION['am']=$apmat;
+$_SESSION['curp']=$curp;
+$_SESSION['mail']=$mail;
+$_SESSION['calle']=$calle;
+$_SESSION['nex']=$numex;
+$_SESSION['nin']=$numin;
+$_SESSION['col']=$colonia;
+$_SESSION['cop']=$codp;
+$_SESSION['entidad']=$estado;
+$_SESSION['alcmun']=$alc_mun;
+$_SESSION['lugar']=$lugar;
+$_SESSION['date']=$fecha;
+$_SESSION['hora']=$horario;
+$_SESSION['tipo']=$evt;
+$_SESSION['np']=$nump;
+$_SESSION['menu']=$menu;
 ?>
 <a href="formulario.html"><button>Modificar</button></a>
-<a href="regbd.php"><button>Confirmar</button></a>
+<a href="registroBD.php"><button>Confirmar</button></a>
 
