@@ -1,6 +1,10 @@
 <?php
-$nombre=$_REQUEST['ncompleto'];
-$rfc=$_REQUEST['rfc'];
+$nombre=$_REQUEST['nombre'];
+$appat=$_REQUEST['apellidoP'];
+$apmat=$_REQUEST['apellidoM'];
+$curp=$_REQUEST['curp'];
+$mail=$_REQUEST['correo'];
+$tel=$_REQUEST['telefono'];
 $calle=$_REQUEST['calle'];
 $numex=$_REQUEST['num'];
 $numin=$_REQUEST['interior'];
@@ -8,37 +12,38 @@ $codp=$_REQUEST['colonia'];
 $colonia=$_REQUEST['cp'];
 $estado=$_REQUEST['entidad'];
 $municipio=$_REQUEST['municipio'];
-$fecha=$_REQUEST['fecha'];
-$alcald=$_REQUEST['alcaldia'];
-$mail=$_REQUEST['correo'];
-$tel=$_REQUEST['telefono'];
 $lugar=$_REQUEST['lugar'];
+$fecha=$_REQUEST['fecha'];
+$horario=$_REQUEST['hora'];
+$nump=$_REQUEST['numpersonas'];
 $tipo=$_REQUEST['tipo'];
 $otrot=$_REQUEST['eventootro'];
-$nump=$_REQUEST['numpersonas'];
 $menu=$_REQUEST['menu'];
-echo "<h1>EVENTO AGENDADO</h1>";
-echo "<h2>Datos del cliente</h2>Nombre: $nombre <br>";
-echo "RFC: $rfc <br>";
-
-echo "<h2>Direccion</h2>";
-echo "Calle: $calle <br>";
-echo "Colonia: $colonia <br>";
-echo "Entidad federativa: $estado <br>";
-if (empty($municipio)) {
-	echo "Alcaldía: $alcald";
-}else{
-	echo "Municipio: $municipio";
-}
 
 
-echo "<h3>Medios de contacto del cliente</h3>";
-echo "Correo: $mail <br> Telefono: $tel <br>";
-
-
-
-
+$folio=$fecha.$curp;
+//variable para guardar el municipio o alcaldía en la DB
+$alc_mun;
+$evt;
+echo "<body style='background-color:D5B5F7'>";
+echo "<h1 style='display:block'>EVENTO AGENDADO</h1>";
+echo "<h2><span style='color:red'>Folio: </span> $folio</h2>";
 echo "<h2>Datos del evento</h2>";
+echo "<b>Dirección</b><br>";
+echo "<ul>";
+echo "<li>Calle: $calle <br></li>";
+echo "<li>Colonia: $colonia <br></li>";
+echo "<li>Entidad federativa: $estado <br></li>";
+
+//para saber si es municipio o alcaldía
+if (empty($municipio)) {
+	echo "<li>Alcaldía: $alcald</li>";
+	$alc_mun=$alcald;
+}else{
+	echo "<li>Municipio: $municipio </li>";
+	$alc_mun=$municipio;
+}
+echo "</ul>";
 echo "<p><b>Fecha del evento: </b> $fecha <br>";
 
 if($lugar=='salona')
@@ -46,7 +51,7 @@ if($lugar=='salona')
 	echo "Lugar del evento: Salon A <br>";
 }
 elseif ($lugar=='salonb') {
-	echo "Lugar del evento Salon B <br>";
+	echo "Lugar del evento: Salon B <br>";
 }else{
 	echo "Lugar del evento: $lugar <br>";
 }
@@ -58,4 +63,12 @@ if(empty($otrot))
 }
 echo "Numero de personas: $nump <br>";
 echo "Menu: $menu <br>";
+echo "<h2>Datos del cliente</h2>Nombre: $nombre $appat $apmat <br>";
+echo "CURP: $curp <br>";
+echo "Correo: $mail <br> Telefono: $tel <br>";
+echo "</body>";
+
 ?>
+<a href="formulario.html"><button>Modificar</button></a>
+<a href="regbd.php"><button>Confirmar</button></a>
+
