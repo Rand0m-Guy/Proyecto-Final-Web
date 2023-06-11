@@ -1,27 +1,32 @@
-<?
-$folio=$_SESSION['nombre'];
-$nombre=$_GET['nombre'];
-$appat=$_GET['appat'];
-$apmat=$_GET['apmat'];
-$curp=$_GET['curp'];
-$mail=$_GET['mail'];
-$tel=$_GET['tel'];
-$calle=$_GET['calle'];
-$numex=$_GET['numex'];
-$numin=$_GET['numin'];
-$codp=$_GET['codp'];
-$colonia=$_GET['colonia'];
-$estado=$_GET['estado'];
-$municipio=$_GET['municipio'];
-$lugar=$_GET['lugar'];
-$fecha=$_GET['fecha'];
-$horario=$_GET['horario'];
-$nump=$_GET['nump'];
-$tipo=$_GET['tipo'];
-$otrot=$_GET['otrot'];
-$menu=$_GET['menu'];
-$munalc=$_GET['alc_mun'];
+<?php
+session_start();
+$folio=$_SESSION['folio'];
+$nombre=$_SESSION['nombre'];
+$appat=$_SESSION['ap'];
+$apmat=$_SESSION['am'];
+$curp=$_SESSION['curp'];
+$correo=$_SESSION['mail'];
+$calle=$_SESSION['calle'];
+$num_ext=$_SESSION['nex'];
+$num_int=$_SESSION['nin'];
+$colonia=$_SESSION['col'];
+$cp=$_SESSION['cop'];
+$entidad=$_SESSION['entidad'];
+$alc_o_mun=$_SESSION['alcmun'];
+$lugar=$_SESSION['lugar'];
+$fecha=$_SESSION['date'];
+$hora=$_SESSION['hora'];
+$tipo_evento=$_SESSION['tipo'];
+$num_personas=$_SESSION['np'];
+$menu=$_SESSION['menu'];
+/*
 
-echo "hola";
-echo "$folio";
+
+Aquí va el registro en la base;
+
+
+
+
+*/
+echo "Tu pedido con el folio  ".$folio." Ha sido almacenado exitosamente!!";
 ?>

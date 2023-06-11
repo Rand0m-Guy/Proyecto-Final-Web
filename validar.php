@@ -19,9 +19,17 @@ $nump=$_REQUEST['numpersonas'];
 $tipo=$_REQUEST['tipo'];
 $otrot=$_REQUEST['eventootro'];
 $menu=$_REQUEST['menu'];
+$evt;
 
 
-$folio=$fecha.$curp;
+/*
+//Variables para almacenar la hora de inicio y fin
+$horainicio=substr($horario, 0, 2);
+$horafin=substr($horario, -2);
+*/
+
+
+$folio=$curp.$fecha;
 //variable para guardar el municipio o alcaldía en la DB
 $alc_mun;
 $evt;
@@ -29,6 +37,28 @@ echo "<body style='background-color:D5B5F7'>";
 echo "<h1 style='display:block'>EVENTO AGENDADO</h1>";
 echo "<h2><span style='color:red'>Folio: </span> $folio</h2>";
 echo "<h2>Datos del evento</h2>";
+echo "<p><b>Fecha del evento: </b> $fecha <br>";
+echo "Horario: ".$horario. "<br>";
+if($lugar=='salona')
+{
+	echo "Lugar del evento: Salon A <br>";
+}
+elseif ($lugar=='salonb') {
+	echo "Lugar del evento: Salon B <br>";
+}else{
+	echo "Lugar del evento: $lugar <br>";
+}
+if(empty($otrot))
+{
+	echo "Tipo de evento: $tipo <br>";
+	$evt=$tipo;
+}else{
+	echo "Tipo de evento: $otrot <br>";
+	$evt=$otrot;
+}
+echo "Numero de personas: $nump <br>";
+echo "Menu: $menu <br>";
+echo "<h2>Datos del cliente</h2>Nombre: $nombre $appat $apmat <br>";
 echo "<b>Dirección</b><br>";
 echo "<ul>";
 echo "<li>Calle: $calle <br></li>";
@@ -44,31 +74,36 @@ if (empty($municipio)) {
 	$alc_mun=$municipio;
 }
 echo "</ul>";
-echo "<p><b>Fecha del evento: </b> $fecha <br>";
-
-if($lugar=='salona')
-{
-	echo "Lugar del evento: Salon A <br>";
-}
-elseif ($lugar=='salonb') {
-	echo "Lugar del evento: Salon B <br>";
-}else{
-	echo "Lugar del evento: $lugar <br>";
-}
-if(empty($otrot))
-{
-	echo "Tipo de evento: $tipo <br>";
-}else{
-	echo "Tipo de evento: $otrot <br>";
-}
-echo "Numero de personas: $nump <br>";
-echo "Menu: $menu <br>";
-echo "<h2>Datos del cliente</h2>Nombre: $nombre $appat $apmat <br>";
 echo "CURP: $curp <br>";
 echo "Correo: $mail <br> Telefono: $tel <br>";
 echo "</body>";
+session_start();
+
+//Sesiones para traslado a BD
+$_SESSION['folio']=$folio;
+$_SESSION['nombre']=$nombre;
+$_SESSION['ap']=$appat;
+$_SESSION['am']=$apmat;
+$_SESSION['curp']=$curp;
+$_SESSION['mail']=$mail;
+$_SESSION['calle']=$calle;
+$_SESSION['nex']=$numex;
+$_SESSION['nin']=$numin;
+$_SESSION['col']=$colonia;
+$_SESSION['cop']=$codp;
+$_SESSION['entidad']=$estado;
+$_SESSION['alcmun']=$alc_mun;
+$_SESSION['lugar']=$lugar;
+$_SESSION['date']=$fecha;
+$_SESSION['hora']=$horario;
+$_SESSION['tipo']=$evt;
+$_SESSION['np']=$nump;
+$_SESSION['menu']=$menu;
 
 ?>
-<a href="formulario.html"><button>Modificar</button></a>
-<a href="regbd.php"><button>Confirmar</button></a>
-
+<a href="formulario.html">
+	<button>Modificar</button>
+</a>
+<a href="regbd.php">
+	<button>Confirmar</button>
+</a>
