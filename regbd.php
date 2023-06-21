@@ -19,6 +19,7 @@ $hora=$_SESSION['hora'];
 $tipo_evento=$_SESSION['tipo'];
 $num_personas=$_SESSION['np'];
 $menu=$_SESSION['menu'];
+$fotolugar=$_SESSION['lugarimg'];
 /*
 
 
@@ -30,3 +31,5 @@ Aquí va el registro en la base;
 */
 echo "Tu pedido con el folio  ".$folio." Ha sido almacenado exitosamente!!";
 ?>
+
+<a href="pdf.php"><button>Generar PDF</button></a>
