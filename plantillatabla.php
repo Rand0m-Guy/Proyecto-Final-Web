@@ -1,5 +1,5 @@
 <?php
-	$conexion=mysqli_connect('localhost', 'root', '', /*Nombredelabase*/)
+	$conexion=mysqli_connect("localhost", "root", "", "proyectoweb");
 ?>
 <!DOCTYPE html>
 <html>
