@@ -108,7 +108,7 @@ function validaciones() {
     }
     if(tipo === "otro") {
         let eventoEspecial = document.forms["registro"]["eventootro"].value;
-        let eventoEspecialRegex = /^[A-Za-z]+$/;
+        let eventoEspecialRegex = /^[A-Za-z ]+$/;
         let eventoMatch = eventoEspecial.match(eventoEspecialRegex);
         if(eventoMatch == null || eventoMatch[0] !== eventoEspecial) {
             alert("EVENTO INVÁLIDO");
