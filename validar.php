@@ -99,7 +99,7 @@
 	$_SESSION['hora']=$horario;
 	$_SESSION['tipo']=$evt;
 	$_SESSION['np']=$nump;
-	$_SESSION['menu']=$menu;
+	$_SESSION['menu']=$menu;	
 
 ?>
 	<a href="formulario.html">
