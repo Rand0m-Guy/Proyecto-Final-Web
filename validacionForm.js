@@ -59,7 +59,7 @@ function validaciones() {
     }
     if(entidad != "cdmx") {
         let municipio = document.forms["registro"]["municipio"].value;
-        let munRegex = /^[A-Za-z]+$/;
+        let munRegex = /^[A-Za-z ]+$/;
         let munMatch = municipio.match(munRegex);
         if(munMatch == null || munMatch[0] !== municipio) {
             alert("MUNICIPIO INVÁLIDO");
