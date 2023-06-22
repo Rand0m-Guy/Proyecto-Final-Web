@@ -81,6 +81,7 @@
 	session_start();
 
 	//Sesiones para traslado a BD
+	$_SESSION['curp']=$curp;
 	$_SESSION['folio']=$folio;
 	$_SESSION['nombre']=$nombre;
 	$_SESSION['ap']=$appat;
@@ -99,7 +100,7 @@
 	$_SESSION['hora']=$horario;
 	$_SESSION['tipo']=$evt;
 	$_SESSION['np']=$nump;
-	$_SESSION['menu']=$menu;
+	$_SESSION['menu']=$menu;	
 
 ?>
 	<a href="formulario.html">

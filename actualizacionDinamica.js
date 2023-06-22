@@ -87,7 +87,7 @@ function onChangeFecha() {
     horaEvento.value = "ninguno";
     if(dia === 0) {
         var opt = document.createElement('option');
-        opt.value = 9;
+        opt.value = "9am - 2pm";
         opt.innerHTML = "9am - 2pm";
         horaEvento.appendChild(opt);
     }
@@ -98,18 +98,18 @@ function onChangeFecha() {
 
     if(dia === 5) {
         var opt1 = document.createElement('option');
-        opt1.value = 12;
+        opt1.value = "12pm - 5pm";
         opt1.innerHTML = "12pm - 5pm";
         horaEvento.appendChild(opt1);
         var opt2 = document.createElement('option');
-        opt2.value = 7;
+        opt2.value = "7pm - 12am";
         opt2.innerHTML = "7pm - 12am";
         horaEvento.appendChild(opt2);
         return;
     }
 
     var opt3 = document.createElement('option');
-    opt3.value = 2;
+    opt3.value = "2pm - 7pm";
     opt3.innerHTML = "2pm - 7pm";
     horaEvento.appendChild(opt3);
 }
