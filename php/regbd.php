@@ -40,6 +40,6 @@
         echo "Tu pedido con el folio  ".$folio." Ha sido almacenado exitosamente!!";
     }else{
         /*Aqui el rebote*/
-        echo "<script> alert('Salón, Fecha y Horas ya reservadas'); window.location = 'formulario.html';</script>";
+        echo "<script> alert('Salón, Fecha y Horas ya reservadas'); window.location = '../html/formulario.html';</script>";
     }
 ?>
