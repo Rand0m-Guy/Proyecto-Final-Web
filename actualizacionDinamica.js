@@ -70,10 +70,20 @@ tipoEvento.onchange = onChangeTipo;
 onChangeTipo();
 
 var fechaEvento = document.getElementById("fecha");
+var lugarEvento = document.getElementById("lugar");
+
 // Pone horarios dependiendo del día de la semana
 function onChangeFecha() {
     var horaEvento = document.getElementById("hora");
     var fechaARevisar = new Date(Date.parse(fechaEvento.value.replace(/-/g, " ")));
+    if(fechaEvento.value == null) {
+        console.log("NULLL");
+        return;
+    }
+    if(fechaEvento.value.length == 0) {
+        console.log("NADAAA");
+        return;
+    }
     let dia = fechaARevisar.getDay();
     console.log(fechaEvento);
     console.log(horaEvento);
@@ -85,7 +95,9 @@ function onChangeFecha() {
     }
 
     horaEvento.value = "ninguno";
-    if(dia === 0) {
+    if(lugarEvento.value === "ninguno") return;
+
+    if(dia === 0 && lugarEvento.value === "jardin") {
         var opt = document.createElement('option');
         opt.value = "9am - 2pm";
         opt.innerHTML = "9am - 2pm";
@@ -96,7 +108,7 @@ function onChangeFecha() {
         return;
     }
 
-    if(dia === 5) {
+    if(dia === 5 && lugarEvento.value !== "jardin") {
         var opt1 = document.createElement('option');
         opt1.value = "12pm - 5pm";
         opt1.innerHTML = "12pm - 5pm";
@@ -107,6 +119,7 @@ function onChangeFecha() {
         horaEvento.appendChild(opt2);
         return;
     }
+    if(lugarEvento.value === "jardin") return;
 
     var opt3 = document.createElement('option');
     opt3.value = "2pm - 7pm";
@@ -115,4 +128,5 @@ function onChangeFecha() {
 }
 
 fechaEvento.onchange = onChangeFecha;
+lugarEvento.onchange = onChangeFecha;
 onChangeFecha();
