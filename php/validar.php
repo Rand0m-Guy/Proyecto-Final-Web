@@ -39,7 +39,7 @@
 	echo "<h2><span style='color:red'>Folio: </span> $folio</h2>";
 	echo "<h2>Datos del evento</h2>";
 	echo "<p><b>Fecha del evento: </b> $fecha <br>";
-	echo "Hora de inicio: ".$horario. " p.m<br>";
+	echo "Hora de inicio: ".$horario. "<br>";
 	if($lugar=='salona')
 	{
 		echo "Lugar del evento: Salon A <br>";
@@ -101,9 +101,12 @@
 	$_SESSION['tipo']=$evt;
 	$_SESSION['np']=$nump;
 	$_SESSION['menu']=$menu;	
-
+	$_SESSION['municipio']=$municipio;
+	$_SESSION['alcaldia']=$alcald;
+	$_SESSION['tipod']=$tipo;
+	$_SESSION['otrotipo']=$otrot;
 ?>
-	<a href="../html/formulario.html">
+	<a href="../php/modreg.php">
 		<button>Modificar</button>
 	</a>
 	<a href="regbd.php">
