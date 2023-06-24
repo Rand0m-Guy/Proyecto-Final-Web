@@ -7,6 +7,7 @@
     $apmat=$_SESSION['am'];
     $curp=$_SESSION['curp'];
     $correo=$_SESSION['mail'];
+    $tel=$_SESSION['tel'];
     $calle=$_SESSION['calle'];
     $num_ext=$_SESSION['nex'];
     $num_int=$_SESSION['nin'];
@@ -20,7 +21,7 @@
     $tipo_evento=$_SESSION['tipo'];
     $num_personas=$_SESSION['np'];
     $menu=$_SESSION['menu'];
-
+    $fotolugar=$_SESSION['lugarimg'];
     $conexion = mysqli_connect("localhost","root","","proyectoweb");
 
     $selectCliente = "SELECT CURP FROM CLIENTE WHERE CURP='$curp'";
@@ -28,7 +29,7 @@
     $registros=mysqli_num_rows($resultado);
 
     if ($registros==0){
-        $insertCliente = "INSERT INTO Cliente VALUES('$curp','$nombre','$apmat','$appat',$num_ext,'$num_int','$colonia','$alc_o_mun','$cp','$entidad','$correo')";
+        $insertCliente = "INSERT INTO Cliente VALUES('$curp','$nombre','$apmat','$appat',$num_ext,'$num_int','$colonia','$alc_o_mun','$cp','$entidad','$correo','$tel')";
         $resultado = mysqli_query($conexion, $insertCliente);
     }
     $selectContratacion = "SELECT * FROM Contratacion WHERE Lugar='$lugar' AND FechaEvento='$fecha' AND Horario='$hora'";
@@ -38,8 +39,11 @@
         $insertContratacion = "INSERT INTO Contratacion VALUES('$curp','$fecha','$folio','$hora','$tipo_evento',$num_personas,'$menu','$lugar')";
         $resultado = mysqli_query($conexion, $insertContratacion);
         echo "Tu pedido con el folio  ".$folio." Ha sido almacenado exitosamente!!";
+        echo "<a href='../pdf.php'><button>Generar PDF</button></a>";
     }else{
         /*Aqui el rebote*/
         echo "<script> alert('Salón, Fecha y Horas ya reservadas'); window.location = '../html/formulario.html';</script>";
     }
+
+
 ?>
