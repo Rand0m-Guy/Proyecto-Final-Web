@@ -20,7 +20,7 @@
     $tipo_evento=$_SESSION['tipo'];
     $num_personas=$_SESSION['np'];
     $menu=$_SESSION['menu'];
-
+    $fotolugar=$_SESSION['lugarimg'];
     $conexion = mysqli_connect("localhost","root","","proyectoweb");
 
     $selectCliente = "SELECT CURP FROM CLIENTE WHERE CURP='$curp'";
@@ -38,8 +38,11 @@
         $insertContratacion = "INSERT INTO Contratacion VALUES('$curp','$fecha','$folio','$hora','$tipo_evento',$num_personas,'$menu','$lugar')";
         $resultado = mysqli_query($conexion, $insertContratacion);
         echo "Tu pedido con el folio  ".$folio." Ha sido almacenado exitosamente!!";
+        echo "<a href="pdf.php"><button>Generar PDF</button></a>"
     }else{
         /*Aqui el rebote*/
         echo "<script> alert('Salón, Fecha y Horas ya reservadas'); window.location = '../html/formulario.html';</script>";
     }
+
+
 ?>
