@@ -103,7 +103,7 @@
 	$_SESSION['menu']=$menu;	
 
 ?>
-	<a href="formulario.html">
+	<a href="../html/formulario.html">
 		<button>Modificar</button>
 	</a>
 	<a href="regbd.php">
