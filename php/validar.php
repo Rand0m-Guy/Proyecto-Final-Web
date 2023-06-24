@@ -68,6 +68,7 @@ elseif ($lugar=='salonb') {
 	echo "Lugar del evento: Salón B <br>";
 }else{
 	echo "Lugar del evento: $lugar <br>";
+	$place="Jardín";
 	$fotolugar="jardin-0.jpg";
 }
 if(empty($otrot))

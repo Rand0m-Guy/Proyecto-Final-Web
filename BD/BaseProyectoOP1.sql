@@ -12,7 +12,8 @@ Create table Cliente (
     Alcadia varchar(20) not null,
     CP varchar(5) not null,
     EntidadF varchar(20) not null,
-    email varchar(30) not null
+    email varchar(30) not null,
+    Tel varchar(10) not null
 );
 
 alter table Cliente add constraint PK1 primary key(CURP);
