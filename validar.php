@@ -114,6 +114,7 @@ $_SESSION['ap']=$appat;
 $_SESSION['am']=$apmat;
 $_SESSION['curp']=$curp;
 $_SESSION['mail']=$mail;
+$_SESSION['tel']=$tel;
 $_SESSION['calle']=$calle;
 $_SESSION['nex']=$numex;
 $_SESSION['nin']=$numin;

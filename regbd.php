@@ -6,6 +6,7 @@ $appat=$_SESSION['ap'];
 $apmat=$_SESSION['am'];
 $curp=$_SESSION['curp'];
 $correo=$_SESSION['mail'];
+$tel=$_SESSION['tel'];
 $calle=$_SESSION['calle'];
 $num_ext=$_SESSION['nex'];
 $num_int=$_SESSION['nin'];
