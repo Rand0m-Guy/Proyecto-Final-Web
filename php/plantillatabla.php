@@ -1,5 +1,5 @@
 <?php
-	$conexion=mysqli_connect('localhost', 'root', '', /*Nombredelabase*/)
+	$conexion=mysqli_connect("localhost", "root", "", "proyectoweb");
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,8 +16,8 @@
 		<tr>
 			<th>CURP</th>
 			<th>FechaEvento</th>
-			<th>HoraInicio</th>
-			<th>HoraFin</th>
+			<!-- <th>HoraInicio</th> -->
+			<th>Horario</th>
 			<th>TipoEvento</th>
 			<th>NumPersonas</th>
 			<th>Menú</th>
@@ -32,8 +32,8 @@
 		<tr>
 			<td><?php echo $show['CURP']?></td>
 			<td><?php echo $show['FechaEvento']?></td>
-			<td><?php echo $show['horaInicio']?></td>
-			<td><?php echo $show['horaFinal']?></td>
+			<!-- <td><?php echo $show['horaInicio']?></td> -->
+			<td><?php echo $show['Horario']?></td>
 			<td><?php echo $show['tipoEvento']?></td>
 			<td><?php echo $show['numPersonas']?></td>
 			<td><?php echo $show['Menu']?></td>

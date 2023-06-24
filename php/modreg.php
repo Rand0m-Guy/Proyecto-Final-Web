@@ -1,9 +1,45 @@
+<?php
+    session_start();
+    $curp=$_SESSION['curp'];
+    $folio=$_SESSION['folio'];
+    $nombre=$_SESSION['nombre'];
+    $appat=$_SESSION['ap'];
+    $apmat=$_SESSION['am'];
+    $curp=$_SESSION['curp'];
+    $correo=$_SESSION['mail'];
+    $calle=$_SESSION['calle'];
+    $num_ext=$_SESSION['nex'];
+    $num_int=$_SESSION['nin'];
+    $colonia=$_SESSION['col'];
+    $cp=$_SESSION['cop'];
+    $entidad=$_SESSION['entidad'];
+    $alc_o_mun=$_SESSION['alcmun'];
+    $lugar=$_SESSION['lugar'];
+    $fecha=$_SESSION['date'];
+    $hora=$_SESSION['hora'];
+    $tipo_evento=$_SESSION['tipo'];
+    $num_personas=$_SESSION['np'];
+    $menu=$_SESSION['menu'];
+    $municipio=$_SESSION['municipio'];
+    $alcaldia=$_SESSION['alcaldia'];
+    $tipodef=$_SESSION['tipod'];
+    $tipootro=$_SESSION['otrotipo'];
+
+    $estados=array('aguascalientes'=>'Aguascalientes','bajacalifornia'=>'Baja California','bajacaliforniasur'=>'Baja California Sur','campeche'=>'Campeche','chiapas'=>'Chiapas','chihuahua'=>'Chihuahua','cdmx'=>'CDMX','coahuila'=>'Coahuila','colima'=>'Colima','durango'=>'Durango','guanajuato'=>'Guanajuato','guerrero'=>'Guerrero','hidalgo'=>'Hidalgo','jalisco'=>'Jalisco','edomex'=>'Estado de México','michoacan'=>'Michoacán','morelos'=>'Morelos','nayarit'=>'','nuevoleon'=>'Nuevo León','oaxaca'=>'Oaxaca','puebla'=>'Pueba','queretaro'=>'Querétaro','quintanaroo'=>'Quintana Roo','sanluispotosi'=>'San Luis Potosí','sinaloa'=>'Sinaloa','sonora'=>'Sonora','tabasco'=>'Tabasco','tamaulipas'=>'Tamaulipas','tlaxcala'=>'Tlaxcala','veracruz'=>'Veracruz','yucatan'=>'Yucatán','zacatecas'=>'Zacatecas');
+
+    $alcaldias = array('alvaroobregon' =>'Álvaro Obregón','azcapotzalco' =>'Azcapotzalco','bj' =>'Benito Juárez','coyoacan' =>'Coyoacán','cuajimalpa' =>'Cuajimalpa','cuauhtemoc' =>'Cuauhtémoc','madero' =>'Gustavo A. Madero','iztacalco' =>'Iztacalco','iztapalapa' =>'Iztapalapa','mcontreras' =>'Magdalena Contreras','hidalgo' =>'Miguel Hidalgo','malta' =>'Milpa Alta','tlahuac' =>'Tláhuac','tlalpan' =>'Tlalpan','carranza' =>'Venustiano Carranza','xochimilco' =>'Xochimilco' );
+
+    $eventos  = array('bautizo' =>'Bautizo' ,'comunion' =>'Primera Comunión' ,'quince' =>'XV Años' ,'boda' =>'Boda' ,'cumple' =>'Cumpleaños' ,'otro' =>'Otro'  );
+    $lugares = array('salona' => 'Salón A','salonb' =>'Salón B' ,'jardin' =>'Jardín');
+    $menus = array('economico'=>'Económico','ejecutivo'=>'Ejecutivo');
+    //$eventos = array('' => , );
+?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="validacionForm.js"></script>
+    <script type="text/javascript" src="../js/validacionForm.js"></script>
     <title>Formulario</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,12 +47,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&family=Sacramento&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <script src="js/bootstrap.bundle.min.js" ></script>
-    <link rel="stylesheet" href="css/styles.css">
+    <script src="../js/bootstrap.bundle.min.js" ></script>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body class="position-relative bodyRegistro">
     <video autoplay muted loop id="myVideo">
-        <source src="video/Video_BG.mp4" type="video/mp4">
+        <source src="../video/Video_BG.mp4" type="video/mp4">
       </video>
         <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary  navbar-dark bg-dark">
             <div class="container-fluid">
@@ -41,29 +77,29 @@
     </nav>
 
     <section class=" contenedor w-75 p-3 my-3 position-relative container"  id="contForm" >
-        <form name="registro" action="validar.php" method="POST" id="registro" onsubmit="return validaciones()">
+        <form name="registro" action="../php/validar.php" method="POST" id="registro" onsubmit="return validaciones()">
             <div class="row">
                 <div class="col">
                     <label for="nombre">Nombre(s)<span aria-label="required">*</span></label><br>
-                    <input class="input-group mb-3" type="text" id="nombre" name="nombre" placeholder="Juan Rubén" required>
+                    <input class="input-group mb-3" type="text" id="nombre" name="nombre" value="<?php echo $nombre; ?>" placeholder="Juan Rubén" required>
                 </div>
                 <div class="col">
                     <label for="apellidoP">Apellido Paterno<span aria-label="required">*</span></label><br>
-                    <input class="input-group mb-3" type="text" id="apellidoP" name="apellidoP" placeholder="Pérez" required>
+                    <input class="input-group mb-3" type="text" id="apellidoP" name="apellidoP" value="<?php echo $appat; ?>" required>
                 </div>
                 <div class="col">
                     <label for="apellidoM">Apellido Materno<span aria-label="required">*</span></label><br>
-                    <input class="input-group mb-3" type="text" id="apellidoM" name="apellidoM" placeholder="Bárcenas" required>
+                    <input class="input-group mb-3" type="text" id="apellidoM" name="apellidoM" value="<?php echo $apmat; ?>" required>
                 </div>
             </div>
             <div class="row line-bottom">
                 <div class="col">
                     <label for="curp">CURP<span aria-label="required">*</span></label><br>
-                    <input class="input-group mb-3" type="text" id="curp" name="curp" placeholder="SABC560626MDFLRN09" required>
+                    <input class="input-group mb-3" type="text" id="curp" name="curp" value="<?php echo $curp; ?>" required>
                 </div>
                 <div class="col">
                     <label for="correo">Correo Electrónico<span aria-label="required">*</span></label><br>
-                    <input class="input-group mb-3" type="email" id="correo" name="correo" placeholder="jperez@company.com" required>
+                    <input class="input-group mb-3" type="email" id="correo" name="correo" value="<?php echo $correo; ?>" required>
                 </div>
                 <div class="col">
                     <label for="telefono">Teléfono<span aria-label="required">*</span></label><br>
@@ -75,21 +111,22 @@
                 <div class="row">
                     <div class="col">
                         <label for="calle">Calle<span aria-label="required">*</span></label><br>
-                        <input class="input-group mb-3" type="text" id="calle" name="calle" placeholder="José Antonio Alzate" required>
+                        <input class="input-group mb-3" type="text" id="calle" name="calle" value="<?php echo $calle; ?>" required>
                     </div>
 
                     <div class="col">
                         <label for="num">Número<span aria-label="required">*</span></label><br>
-                        <input class="input-group mb-3" type="number" id="num" name="num" placeholder="184" min="1" required>
+                        <input class="input-group mb-3" type="number" id="num" name="num" value="<?php echo $num_ext; ?>" min="1" required>
                     </div>
                     <div class="col">
                         <label for="interior">Interior</label><br>
-                        <input class="input-group mb-3" type="text" id="interior" name="interior" placeholder="9A">
+                        <input class="input-group mb-3" type="text" id="interior" name="interior" value="<?php echo $num_int; ?>">
                     </div>
                     <div class="col">
                         <label for="entidad">Entidad Federativa<span aria-label="required">*</span></label><br>
                         <select class="input-group mb-3" id="entidad" name="entidad" required>
                             <option value="ninguno">-- Seleccione uno --</option>
+                            <option value="<?php echo $entidad; ?>" selected> <?php echo $estados[$entidad]; ?> </option>
                             <option value="aguascalientes">Aguascalientes</option>
                             <option value="bajacalifornia">Baja California</option>
                             <option value="bajacaliforniasur">Baja California Sur</option>
@@ -128,20 +165,20 @@
                 <div class="row line-bottom">
                     <div class="col">
                         <label for="colonia">Colonia<span aria-label="required">*</span></label><br>
-                        <input class="input-group mb-3" type="text" id="colonia" name="colonia" placeholder="Santa María la Ribera" required>
+                        <input class="input-group mb-3" type="text" id="colonia" name="colonia" value="<?php echo $colonia; ?>"required>
                     </div>
 
                     <div class="col">
                         <label for="cp">CP<span aria-label="required">*</span></label><br>
-                        <input class="input-group mb-3" type="number" id="cp" name="cp" placeholder="06400" required>
+                        <input class="input-group mb-3" type="number" id="cp" name="cp" value="<?php echo $cp; ?>" required>
                     </div>
 
                     <div class="col">
                         <label for="municipio" id="municipiotxt" style="display: none;">Municipio<span aria-label="required">*</span></label>
-                        <input class="input-group mb-3" type="text" id="municipio" name="municipio" placeholder="Mazapil" style="display: none;">
+                        <input class="input-group mb-3" type="text" id="municipio" name="municipio" value="<?php echo $municipio; ?>" style="display: none;">
                         <label for="alcaldia" id="alcaldiatxt" style="display: none;">Alcaldía<span aria-label="required">*</span></label>
-                        <select class="input-group mb-3" id="alcaldia" name="alcaldia" style="display: none;">
-                            <option value="ninguno">-- Seleccione uno --</option>
+                        <select class="input-group mb-3" id="alcaldia" name="alcaldia" style="display: none; " required>
+                            <option value="<?php echo $alcaldia; ?>" selected><?php echo $alcaldias[$alcaldia];?></option>
                             <option value="alvaroobregon">Álvaro Obregón</option>
                             <option value="azcapotzalco">Azcapotzalco</option>
                             <option value="bj">Benito Juárez</option>
@@ -167,6 +204,7 @@
                 <div class="col">
                     <label for="lugar">Lugar<span aria-label="required">*</span></label><br>
                         <select class="input-group mb-3" id="lugar" name="lugar" required>
+                            <option value="<?php echo $lugar;?>" selected> <?php echo $lugares[$lugar]; ?> </option>
                             <option value="ninguno">-- Seleccione uno --</option>
                             <option value="salona">Salón A</option>
                             <option value="salonb">Salón B</option>
@@ -176,19 +214,19 @@
 
                 <div class="col">
                     <label for="fecha">Fecha del Evento<span aria-label="required">*</span></label><br>
-                    <input class="input-group mb-3 input-date" type="date" id="fecha" name="fecha" onchange="onChangeFecha()" required>
+                    <input class="input-group mb-3 input-date" type="date" id="fecha" name="fecha" value="<?php echo $fecha; ?>" onchange="onChangeFecha()" required>
                 </div>
 
                 <div class="col">
                     <label for="hora">Horario<span aria-label="required">*</span></label><br>
                         <select class="input-group mb-3" id="hora" name="hora" required>
-                            <option value="ninguno">-- Seleccione uno --</option>
+                            <option value="<?php echo $hora; ?>"><?php echo $hora; ?></option>
                     </select>
                 </div>
 
                 <div class="col">
                     <label for="numpersonas">Número de Personas<span aria-label="required">*</span></label><br>
-                    <input class="input-group mb-3" type="number" id="numpersonas" min="75" max ="200" name="numpersonas" placeholder="100" required>
+                    <input class="input-group mb-3" type="number" id="numpersonas" min="75" max ="200" name="numpersonas" value="<?php echo $num_personas; ?>" required>
                 </div>
             </div>
 
@@ -196,7 +234,7 @@
                 <div class="col">
                     <label for="tipo">Tipo de Evento<span aria-label="required">*</span></label><br>
                         <select class="input-group mb-3" id="tipo" name="tipo" required>
-                            <option value="ninguno">-- Seleccione uno --</option>
+                            <option value="<?php echo $tipodef; ?>" selected><?php echo $eventos[$tipodef]; ?></option>
                             <option value="bautizo">Bautizo</option>
                             <option value="comunion">Primera Comunión</option>
                             <option value="quince">XV años</option>
@@ -208,13 +246,13 @@
 
                 <div class="col">
                     <label for="eventootro" id="eventootrotxt" style="display: none;">Evento<span aria-label="required">*</span></label>
-                    <input class="input-group mb-3" type="text" id="eventootro" name="eventootro" placeholder="Graduación" style="display: none;">
+                    <input class="input-group mb-3" type="text" id="eventootro" name="eventootro" value="<?php echo $tipootro; ?>" style="display: none;">
                 </div>
 
                 <div class="col">
                     <label for="menu">Menú<span aria-label="required">*</span></label><br>
                         <select class="input-group mb-3" id="menu" name="menu" required>
-                            <option value="ninguno">-- Seleccione uno --</option>
+                            <option value="<?php echo $menu; ?>" selected><?php echo $menus[$menu]; ?></option>
                             <option value="economico">Económico</option>
                             <option value="ejecutivo">Ejecutivo</option>
                     </select>
@@ -222,8 +260,9 @@
             </div>
             <br>
             <div class="row">
-                <div class="col">
-                    <input class="boton-submit-f start-50 translate-middle-x" type="submit" value="Enviar">
+                <div class="col text-center">
+                    <input class="boton-submit mx-xxl-5" type="submit" value="Enviar">
+                    <input class="boton-submit mx-xxl-5" type="reset" value="Limpiar">
                 </div>
             </div>
         </form>
@@ -236,7 +275,7 @@
             </ul>
         </footer>
     </div>
-<script src="actualizacionDinamica.js"></script>
+<script src="../js/actualizacionDinamica.js"></script>
 
 </body>
 </html>
