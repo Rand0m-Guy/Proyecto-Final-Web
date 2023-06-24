@@ -1,4 +1,8 @@
 <?php
+    if ( !($_GET['function']='add' && $_GET['id_pag'])){
+        header("Location: ../html/Principal.html");
+        exit;
+    }
     session_start();
     $curp=$_SESSION['curp'];
     $folio=$_SESSION['folio'];
@@ -40,6 +44,6 @@
         echo "Tu pedido con el folio  ".$folio." Ha sido almacenado exitosamente!!";
     }else{
         /*Aqui el rebote*/
-        echo "<script> alert('Salón, Fecha y Horas ya reservadas'); window.location = '../html/formulario.html';</script>";
+        echo "<script> alert('Salón, Fecha y Horas ya reservadas'); window.location = '../html/formulario.php?function=add&id_pag=1';</script>";
     }
 ?>

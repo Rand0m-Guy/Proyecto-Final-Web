@@ -1,3 +1,9 @@
+<?php
+    if ( !($_GET['function']='add' && $_GET['id_pag'])){
+        header("Location: ../html/Principal.html");
+        exit;
+    }
+?>
 <!doctype html>
 <html>
   <head>
@@ -21,20 +27,20 @@
       </video>
         <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary  navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="Principal.html">Rythm</a>
+                <a class="navbar-brand" href="../html/Principal.html">Rythm</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link " href="comprobante.html">Comprobante</a>
+                            <a class="nav-link " href="comprobante.php?function=add&id_pag=1">Comprobante</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="formulario.html">Agendar Evento</a>
+                            <a class="nav-link" href="formulario.php?function=add&id_pag=1">Agendar Evento</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="adminForms.html">Administrador</a>
+                            <a class="nav-link active" aria-current="page" href="adminForms.php?function=add&id_pag=1">Administrador</a>
                         </li>
                     </ul>
                 </div>

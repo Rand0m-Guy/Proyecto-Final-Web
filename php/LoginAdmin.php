@@ -1,4 +1,8 @@
 <?php//incluir este código en el html de admin para evitar un "redireccionamiento" y así mostrar todo dentro del formulario de admin. 
+if ( !($_GET['function']='add' && $_GET['id_pag'])){
+	header("Location: ../html/Principal.html");
+	exit;
+}
 $user=$_POST['usuario']; 
 $password=$_POST['contra']; 
 $conexion=mysqli_connect("localhost","root","","proyectoweb"); 

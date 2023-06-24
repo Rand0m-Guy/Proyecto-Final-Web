@@ -1,4 +1,8 @@
 <?php
+	if ( !($_GET['function']='add' && $_GET['id_pag'])){
+        header("Location: ../html/Principal.html");
+        exit;
+    }
 	$nombre=$_REQUEST['nombre'];
 	$appat=$_REQUEST['apellidoP'];
 	$apmat=$_REQUEST['apellidoM'];
@@ -103,9 +107,9 @@
 	$_SESSION['menu']=$menu;	
 
 ?>
-	<a href="../html/formulario.html">
+	<a href="../html/formulario.php?function=add&id_pag=1">
 		<button>Modificar</button>
 	</a>
-	<a href="regbd.php">
+	<a href="regbd.php?function=add&id_pag=1">
 		<button>Confirmar</button>
 	</a>

@@ -1,5 +1,9 @@
 <?php
 	$conexion=mysqli_connect("localhost", "root", "", "proyectoweb");
+	if ( !($_GET['function']='add' && $_GET['id_pag'])){
+        header("Location: ../html/Principal.html");
+        exit;
+    }
 ?>
 <!DOCTYPE html>
 <html>
