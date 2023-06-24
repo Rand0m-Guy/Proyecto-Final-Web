@@ -1,4 +1,26 @@
-<!DOCTYPE html>
+<?php
+    session_start();
+    $curp=$_SESSION['curp'];
+    $folio=$_SESSION['folio'];
+    $nombre=$_SESSION['nombre'];
+    $appat=$_SESSION['ap'];
+    $apmat=$_SESSION['am'];
+    $curp=$_SESSION['curp'];
+    $correo=$_SESSION['mail'];
+    $calle=$_SESSION['calle'];
+    $num_ext=$_SESSION['nex'];
+    $num_int=$_SESSION['nin'];
+    $colonia=$_SESSION['col'];
+    $cp=$_SESSION['cop'];
+    $entidad=$_SESSION['entidad'];
+    $alc_o_mun=$_SESSION['alcmun'];
+    $lugar=$_SESSION['lugar'];
+    $fecha=$_SESSION['date'];
+    $hora=$_SESSION['hora'];
+    $tipo_evento=$_SESSION['tipo'];
+    $num_personas=$_SESSION['np'];
+    $menu=$_SESSION['menu'];
+echo "<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -13,7 +35,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="../js/bootstrap.bundle.min.js" ></script>
     <link rel="stylesheet" href="../css/styles.css">
-    <script src="../js/redirigirIndex.js"> </script>
 </head>
 <body class="position-relative bodyRegistro">
     <video autoplay muted loop id="myVideo">
@@ -241,4 +262,5 @@
 <script src="../js/actualizacionDinamica.js"></script>
 
 </body>
-</html>
+</html>";
+?>

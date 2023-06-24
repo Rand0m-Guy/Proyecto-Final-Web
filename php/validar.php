@@ -21,6 +21,15 @@
 	$otrot=$_REQUEST['eventootro'];
 	$menu=$_REQUEST['menu'];
 	$evt;
+	//hashmaps para convertir a nombres correctos
+
+	 $estados=array('aguascalientes'=>'Aguascalientes','bajacalifornia'=>'Baja California','bajacaliforniasur'=>'Baja California Sur','campeche'=>'Campeche','chiapas'=>'Chiapas','chihuahua'=>'Chihuahua','cdmx'=>'CDMX','coahuila'=>'Coahuila','colima'=>'Colima','durango'=>'Durango','guanajuato'=>'Guanajuato','guerrero'=>'Guerrero','hidalgo'=>'Hidalgo','jalisco'=>'Jalisco','edomex'=>'Estado de México','michoacan'=>'Michoacán','morelos'=>'Morelos','nayarit'=>'','nuevoleon'=>'Nuevo León','oaxaca'=>'Oaxaca','puebla'=>'Pueba','queretaro'=>'Querétaro','quintanaroo'=>'Quintana Roo','sanluispotosi'=>'San Luis Potosí','sinaloa'=>'Sinaloa','sonora'=>'Sonora','tabasco'=>'Tabasco','tamaulipas'=>'Tamaulipas','tlaxcala'=>'Tlaxcala','veracruz'=>'Veracruz','yucatan'=>'Yucatán','zacatecas'=>'Zacatecas');
+
+    $alcaldias = array('alvaroobregon' =>'Álvaro Obregón','azcapotzalco' =>'Azcapotzalco','bj' =>'Benito Juárez','coyoacan' =>'Coyoacán','cuajimalpa' =>'Cuajimalpa','cuauhtemoc' =>'Cuauhtémoc','madero' =>'Gustavo A. Madero','iztacalco' =>'Iztacalco','iztapalapa' =>'Iztapalapa','mcontreras' =>'Magdalena Contreras','hidalgo' =>'Miguel Hidalgo','malta' =>'Milpa Alta','tlahuac' =>'Tláhuac','tlalpan' =>'Tlalpan','carranza' =>'Venustiano Carranza','xochimilco' =>'Xochimilco' );
+
+    $eventos  = array('bautizo' =>'Bautizo' ,'comunion' =>'Primera Comunión' ,'quince' =>'XV Años' ,'boda' =>'Boda' ,'cumple' =>'Cumpleaños' ,'otro' =>'Otro'  );
+    $lugares = array('salona' => 'Salón A','salonb' =>'Salón B' ,'jardin' =>'Jardín');
+    $menus = array('economico'=>'Económico','ejecutivo'=>'Ejecutivo');
 
 
 	/*
@@ -39,32 +48,24 @@
 	echo "<h2><span style='color:red'>Folio: </span> $folio</h2>";
 	echo "<h2>Datos del evento</h2>";
 	echo "<p><b>Fecha del evento: </b> $fecha <br>";
-	echo "Hora de inicio: ".$horario. " p.m<br>";
-	if($lugar=='salona')
-	{
-		echo "Lugar del evento: Salon A <br>";
-	}
-	elseif ($lugar=='salonb') {
-		echo "Lugar del evento: Salon B <br>";
-	}else{
-		echo "Lugar del evento: $lugar <br>";
-	}
+	echo "Hora de inicio: ".$horario. "<br>";
+	echo "Lugar del evento: $lugares[$lugar] <br>";
 	if(empty($otrot))
 	{
-		echo "Tipo de evento: $tipo <br>";
+		echo "Tipo de evento: $eventos[$tipo] <br>";
 		$evt=$tipo;
 	}else{
 		echo "Tipo de evento: $otrot <br>";
 		$evt=$otrot;
 	}
 	echo "Numero de personas: $nump <br>";
-	echo "Menu: $menu <br>";
+	echo "Menu: $menus[$menu] <br>";
 	echo "<h2>Datos del cliente</h2>Nombre: $nombre $appat $apmat <br>";
 	echo "<b>Dirección</b><br>";
 	echo "<ul>";
 	echo "<li>Calle: $calle <br></li>";
 	echo "<li>Colonia: $colonia <br></li>";
-	echo "<li>Entidad federativa: $estado <br></li>";
+	echo "<li>Entidad federativa: $estados[$estado] <br></li>";
 
 	//para saber si es municipio o alcaldía
 	if (empty($municipio)) {
@@ -101,9 +102,12 @@
 	$_SESSION['tipo']=$evt;
 	$_SESSION['np']=$nump;
 	$_SESSION['menu']=$menu;	
-
+	$_SESSION['municipio']=$municipio;
+	$_SESSION['alcaldia']=$alcald;
+	$_SESSION['tipod']=$tipo;
+	$_SESSION['otrotipo']=$otrot;
 ?>
-	<a href="../html/formulario.html">
+	<a href="../php/modreg.php">
 		<button>Modificar</button>
 	</a>
 	<a href="regbd.php">
