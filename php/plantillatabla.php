@@ -11,17 +11,20 @@
 <body>
 	<table style="margin: 0 auto;" border="1">
 		<tr>
-			<th colspan="8">Registro de Contrataciones</th>
+			<th colspan="9">Registro de Contrataciones</th>
 		</tr>
 		<tr>
 			<th>CURP</th>
 			<th>FechaEvento</th>
+
 			<!-- <th>HoraInicio</th> -->
 			<th>Horario</th>
+			<th>Folio</th>
 			<th>TipoEvento</th>
 			<th>NumPersonas</th>
 			<th>Menú</th>
 			<th>Lugar</th>
+			<th>Operación</th>
 		</tr>
 			<?php
 				$consulta="SELECT * FROM Contratacion";
@@ -33,11 +36,13 @@
 			<td><?php echo $show['CURP']?></td>
 			<td><?php echo $show['FechaEvento']?></td>
 			<!-- <td><?php echo $show['horaInicio']?></td> -->
+			<td><?php echo $show['Folio']?></td>
 			<td><?php echo $show['Horario']?></td>
 			<td><?php echo $show['tipoEvento']?></td>
 			<td><?php echo $show['numPersonas']?></td>
 			<td><?php echo $show['Menu']?></td>
 			<td><?php echo $show['Lugar']?></td>
+			<td><a href="">Crear</a> | <a href="update.php?CURP=<?php echo $show['CURP'];?>">Editar</a> |<a href="eliminar.php">Eliminar</a></td>
 
 		</tr>
 			<?php
