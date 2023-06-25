@@ -49,7 +49,8 @@ echo "<h1 style='display:block'>EVENTO AGENDADO</h1>";
 echo "<h2><span style='color:red'>Folio: </span> $folio</h2>";
 echo "<h2>Datos del evento</h2>";
 echo "<p><b>Fecha del evento: </b> $fecha <br>";
-echo "Hora de inicio: ".$horario. " <br>";
+echo "Hora de inicio: ".$horario. "<br>";
+
 if($menu=='ejecutivo')
 {
 	$opmenu="Ejecutivo";
