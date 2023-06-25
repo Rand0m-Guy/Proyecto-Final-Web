@@ -34,6 +34,7 @@
         $fotolugar=$_SESSION['lugarimg'];
         $conexion = mysqli_connect("localhost","root","","proyectoweb");
 
+
         $selectCliente = "SELECT CURP FROM CLIENTE WHERE CURP='$curp'";
         $resultado = mysqli_query($conexion, $selectCliente);
         $registros=mysqli_num_rows($resultado);
