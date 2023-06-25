@@ -9,6 +9,10 @@
 </head>
 <body>
 <?php
+        if ( !($_GET['function']='add' && $_GET['id_pag'])){
+            header("Location: ../html/Principal.html");
+            exit;
+        }
         session_start();
         $curp=$_SESSION['curp'];
         $folio=$_SESSION['folio'];
@@ -32,7 +36,7 @@
         $num_personas=$_SESSION['np'];
         $menu=$_SESSION['menu'];
         $fotolugar=$_SESSION['lugarimg'];
-        $conexion = mysqli_connect("localhost","root","","proyectoweb");
+        $conexion = mysqli_connect("localhost","root", "n0m3l0","proyectoweb");
 
 
         $selectCliente = "SELECT CURP FROM CLIENTE WHERE CURP='$curp'";
@@ -56,7 +60,7 @@
             <?php
         }else{
             /*Aqui el rebote*/
-            echo "<script> alert('Salón, Fecha y Horas ya reservadas'); window.location = '../html/formulario.html';</script>";
+            echo "<script> alert('Salón, Fecha y Horas ya reservadas'); window.location = 'formulario.php?function=add&id_pag=1';</script>";
         }
     ?>
 </body>

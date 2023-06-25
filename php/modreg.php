@@ -3,6 +3,7 @@
     $curp=$_SESSION['curp'];
     $folio=$_SESSION['folio'];
     $nombre=$_SESSION['nombre'];
+    $telefono=$_SESSION['tel'];
     $appat=$_SESSION['ap'];
     $apmat=$_SESSION['am'];
     $curp=$_SESSION['curp'];
@@ -24,10 +25,11 @@
     $alcaldia=$_SESSION['alcaldia'];
     $tipodef=$_SESSION['tipod'];
     $tipootro=$_SESSION['otrotipo'];
+    $lugarpdf=$_SESSION['lugarpf'];
 
     $estados=array('aguascalientes'=>'Aguascalientes','bajacalifornia'=>'Baja California','bajacaliforniasur'=>'Baja California Sur','campeche'=>'Campeche','chiapas'=>'Chiapas','chihuahua'=>'Chihuahua','cdmx'=>'CDMX','coahuila'=>'Coahuila','colima'=>'Colima','durango'=>'Durango','guanajuato'=>'Guanajuato','guerrero'=>'Guerrero','hidalgo'=>'Hidalgo','jalisco'=>'Jalisco','edomex'=>'Estado de México','michoacan'=>'Michoacán','morelos'=>'Morelos','nayarit'=>'','nuevoleon'=>'Nuevo León','oaxaca'=>'Oaxaca','puebla'=>'Pueba','queretaro'=>'Querétaro','quintanaroo'=>'Quintana Roo','sanluispotosi'=>'San Luis Potosí','sinaloa'=>'Sinaloa','sonora'=>'Sonora','tabasco'=>'Tabasco','tamaulipas'=>'Tamaulipas','tlaxcala'=>'Tlaxcala','veracruz'=>'Veracruz','yucatan'=>'Yucatán','zacatecas'=>'Zacatecas');
 
-    $alcaldias = array('alvaroobregon' =>'Álvaro Obregón','azcapotzalco' =>'Azcapotzalco','bj' =>'Benito Juárez','coyoacan' =>'Coyoacán','cuajimalpa' =>'Cuajimalpa','cuauhtemoc' =>'Cuauhtémoc','madero' =>'Gustavo A. Madero','iztacalco' =>'Iztacalco','iztapalapa' =>'Iztapalapa','mcontreras' =>'Magdalena Contreras','hidalgo' =>'Miguel Hidalgo','malta' =>'Milpa Alta','tlahuac' =>'Tláhuac','tlalpan' =>'Tlalpan','carranza' =>'Venustiano Carranza','xochimilco' =>'Xochimilco' );
+    $alcaldias = array('alvaroobregon' =>'Álvaro Obregón','azcapotzalco' =>'Azcapotzalco','bj' =>'Benito Juárez','coyoacan' =>'Coyoacán','cuajimalpa' =>'Cuajimalpa','cuauhtemoc' =>'Cuauhtémoc','madero' =>'Gustavo A. Madero','iztacalco' =>'Iztacalco','iztapalapa' =>'Iztapalapa','mcontreras' =>'Magdalena Contreras','hidalgo' =>'Miguel Hidalgo','malta' =>'Milpa Alta','tlahuac' =>'Tláhuac','tlalpan' =>'Tlalpan','carranza' =>'Venustiano Carranza','xochimilco' =>'Xochimilco', 'ninguno'=>'Seleccione Alcaldía' );
 
     $eventos  = array('bautizo' =>'Bautizo' ,'comunion' =>'Primera Comunión' ,'quince' =>'XV Años' ,'boda' =>'Boda' ,'cumple' =>'Cumpleaños' ,'otro' =>'Otro'  );
     $lugares = array('salona' => 'Salón A','salonb' =>'Salón B' ,'jardin' =>'Jardín');
@@ -56,20 +58,20 @@
       </video>
         <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary  navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="Principal.html">Rythm</a>
+                <a class="navbar-brand" href="../html/Principal.html">Rythm</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link " href="comprobante.html">Comprobante</a>
+                            <a class="nav-link " href="comprobante.php?function=add&id_pag=1">Comprobante</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="formulario.html">Agendar Evento</a>
+                            <a class="nav-link active" href="formulario.php?function=add&id_pag=1">Agendar Evento</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="adminForms.html">Administrador</a>
+                            <a class="nav-link" aria-current="page" href="adminForms.php?function=add&id_pag=1">Administrador</a>
                         </li>
                     </ul>
                 </div>
@@ -77,7 +79,7 @@
     </nav>
 
     <section class=" contenedor w-75 p-3 my-3 position-relative container"  id="contForm" >
-        <form name="registro" action="../php/validar.php" method="POST" id="registro" onsubmit="return validaciones()">
+        <form name="registro" action="validar.php?function=add&id_pag=1" method="POST" id="registro" onsubmit="return validaciones()">
             <div class="row">
                 <div class="col">
                     <label for="nombre">Nombre(s)<span aria-label="required">*</span></label><br>
@@ -103,7 +105,7 @@
                 </div>
                 <div class="col">
                     <label for="telefono">Teléfono<span aria-label="required">*</span></label><br>
-                    <input class="input-group mb-3" type="tel" id="telefono" name="telefono" placeholder="5512345678" minlength="10" pattern="[0-9]{10}" required>
+                    <input class="input-group mb-3" type="tel" id="telefono" name="telefono" value="<?php echo $telefono?>"  minlength="10" pattern="[0-9]{10}" required>
                 </div>
             </div>
             <fieldset>

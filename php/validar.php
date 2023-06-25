@@ -1,4 +1,8 @@
 <?php
+if ( !($_GET['function']='add' && $_GET['id_pag'])){
+	header("Location: ../html/Principal.html");
+	exit;
+}
 $nombre=$_REQUEST['nombre'];
 $appat=$_REQUEST['apellidoP'];
 $apmat=$_REQUEST['apellidoM'];
@@ -10,7 +14,7 @@ $numex=$_REQUEST['num'];
 $numin=$_REQUEST['interior'];
 $codp=$_REQUEST['cp'];
 $colonia=$_REQUEST['colonia'];
-$estado=ucfirst($_REQUEST['entidad']);
+$estado=$_REQUEST['entidad'];
 $municipio=$_REQUEST['municipio'];
 $alcald=$_REQUEST['alcaldia'];
 $lugar=$_REQUEST['lugar'];
@@ -96,17 +100,17 @@ if(empty($otrot))
 	$evt=$otrot;
 }
 echo "Numero de personas: $nump <br>";
-echo "Menu: $menu <br>";
+echo "Menu: $menus[$menu] <br>";
 echo "<h2>Datos del cliente</h2>Nombre: $nombre $appat $apmat <br>";
 echo "<b>Dirección</b><br>";
 echo "<ul>";
 echo "<li>Calle: $calle <br></li>";
 echo "<li>Colonia: $colonia <br></li>";
-echo "<li>Entidad federativa: $estado <br></li>";
+echo "<li>Entidad federativa: $estados[$estado] <br></li>";
 
 //para saber si es municipio o alcaldía
 if (empty($municipio)) {
-	echo "<li>Alcaldía: $alcald</li>";
+	echo "<li>Alcaldía: $alcaldias[$alcald]</li>";
 	$alc_mun=$alcald;
 }else{
 	echo "<li>Municipio: $municipio </li>";
@@ -133,18 +137,24 @@ $_SESSION['col']=$colonia;
 $_SESSION['cop']=$codp;
 $_SESSION['entidad']=$estado;
 $_SESSION['alcmun']=$alc_mun;
-$_SESSION['lugar']=$place;
+$_SESSION['lugarpf']=$place;
+$_SESSION['lugar']=$lugar;
 $_SESSION['date']=$fecha;
 $_SESSION['hora']=$horario;
 $_SESSION['tipo']=$evt;
 $_SESSION['np']=$nump;
 $_SESSION['menu']=$opmenu;
 $_SESSION['lugarimg']=$fotolugar;
+$_SESSION['municipio']=$municipio;
+$_SESSION['alcaldia']=$alcald;
+$_SESSION['menu']=$menu;
+$_SESSION['tipod']=$tipo;
+$_SESSION['otrotipo']=$otrot;
 ?>
-<a href="../html/formulario.html">
+<a href="modreg.php">
 	<button>Modificar</button>
 </a>
-<a href="regbd.php">
-	<button>Confirmar</button>
-</a>
+	<a href="regbd.php?function=add&id_pag=1">
+		<button>Confirmar</button>
+	</a>
 <script src="../js/actualizacionDinamica.js"></script>

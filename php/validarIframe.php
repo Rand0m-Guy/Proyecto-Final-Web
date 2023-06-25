@@ -140,10 +140,10 @@ $_SESSION['np']=$nump;
 $_SESSION['menu']=$opmenu;
 $_SESSION['lugarimg']=$fotolugar;
 ?>
-<a href="formularioIframe.html">
+<a href="../html/formModificado.html">
 	<button>Modificar</button>
 </a>
-<a href="regbd.php">
+<a href="regbd.php?function=add&id_pag=1">
 	<button>Confirmar</button>
 </a>
 <script src="../js/actualizacionDinamica.js"></script>

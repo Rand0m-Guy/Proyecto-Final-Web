@@ -1,5 +1,5 @@
 <?php
-	$conexion=mysqli_connect("localhost", "root", "", "proyectoweb");
+	$conexion=mysqli_connect("localhost", "root", "n0m3l0", "proyectoweb");
 	$id=$_GET['CURP'];
 	
 ?>
@@ -12,7 +12,7 @@
 </head>
 <body>
 	<table style="margin: 0 auto;" border="1">
-		<form action="updateproc.php" method="POST">
+		<form action="updateproc.php?function=add&id_pag=1" method="POST">
 		<tr>
 			<th colspan="9">Tabla de actualización</th>
 		</tr>

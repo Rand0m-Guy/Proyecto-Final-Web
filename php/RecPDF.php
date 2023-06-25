@@ -1,14 +1,14 @@
 <?php
     $folio=$_REQUEST['folio'];
 
-    $conexion = mysqli_connect("localhost","root","","proyectoweb");
+    $conexion = mysqli_connect("localhost","root", "n0m3l0","proyectoweb");
 
     $selectContratacion = "SELECT * FROM Contratacion WHERE Folio='$folio'";
     $resultado = mysqli_query($conexion, $selectContratacion);
     $registros=mysqli_num_rows($resultado);
 
     if ($registros==0){
-        echo "<script> alert('No existe un registro con ese folio'); window.location = '../html/comprobante.html';</script>";
+        echo "<script> alert('No existe un registro con ese folio'); window.location = 'comprobante.php?function=add&id_pag=1';</script>";
     }else{
 		$evento=mysqli_fetch_array($resultado);
 		$curp=substr($evento['Folio'],0,18);
