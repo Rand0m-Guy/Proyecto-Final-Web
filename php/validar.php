@@ -146,3 +146,4 @@ $_SESSION['lugarimg']=$fotolugar;
 <a href="regbd.php">
 	<button>Confirmar</button>
 </a>
+<script src="../js/actualizacionDinamica.js"></script>

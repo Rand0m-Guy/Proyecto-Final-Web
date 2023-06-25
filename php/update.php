@@ -1,6 +1,7 @@
 <?php
 	$conexion=mysqli_connect("localhost", "root", "", "proyectoweb");
 	$id=$_GET['CURP'];
+	
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,9 +38,9 @@
 			?>
 		<tr>
 
-			<td><input type="hidden" name="curp" value="<?php echo $show['CURP']?>"></td>
-			<td><input type="date" name="fecha" value="<?php echo $show['FechaEvento']?>"></td>
-			<td><input type="text" name="folio" value="<?php echo $show['Folio']; ?>"></td>
+			<td><input type="hidden" name="curp" value="<?php echo $show['CURP']?>" readonly></td>
+			<td><input type="date" name="fecha" value="<?php echo $show['FechaEvento']?>" ></td>
+			<td><input type="text" name="folio" value="<?php echo $show['Folio']; ?>" readonly></td>
 			<td><input type="text" name="horario" value="<?php echo $show['Horario']?>"></td>
 			<td><input type="text" name="tipo" value="<?php echo $show['tipoEvento']?>"></td>
 			<td><input type="text" name="npers" value="<?php echo $show['numPersonas']?>"></td>
@@ -53,5 +54,7 @@
 			?>
 		</form>
 	</table>
+	<script src="../js/actualizacionDinamica.js"></script>
+
 </body>
 </html>
