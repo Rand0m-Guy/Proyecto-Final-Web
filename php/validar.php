@@ -8,8 +8,8 @@ $tel=$_REQUEST['telefono'];
 $calle=$_REQUEST['calle'];
 $numex=$_REQUEST['num'];
 $numin=$_REQUEST['interior'];
-$codp=$_REQUEST['colonia'];
-$colonia=$_REQUEST['cp'];
+$codp=$_REQUEST['cp'];
+$colonia=$_REQUEST['colonia'];
 $estado=ucfirst($_REQUEST['entidad']);
 $municipio=$_REQUEST['municipio'];
 $alcald=$_REQUEST['alcaldia'];
@@ -49,7 +49,7 @@ echo "<h1 style='display:block'>EVENTO AGENDADO</h1>";
 echo "<h2><span style='color:red'>Folio: </span> $folio</h2>";
 echo "<h2>Datos del evento</h2>";
 echo "<p><b>Fecha del evento: </b> $fecha <br>";
-echo "Hora de inicio: ".$horario. " p.m<br>";
+echo "Hora de inicio: ".$horario. "<br>";
 if($menu=='ejecutivo')
 {
 	$opmenu="Ejecutivo";

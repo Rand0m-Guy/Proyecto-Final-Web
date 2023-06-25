@@ -6,6 +6,7 @@ Create table Cliente (
     Nombre varchar (40) not null,
     ApellidoM varchar(20) not null,
     ApellidoP varchar(20) not null,
+    Calle varchar(20) not null,
     nExterior int not null,
     nInterior varchar(10),
     Colonia varchar(20) not null,
@@ -31,7 +32,7 @@ Create table Contratacion (
 
 alter table Contratacion
 	add constraint FK1 foreign key(CURP) references Cliente(CURP) on delete cascade on update cascade, 
-    add constraint PK2 primary key(FechaEvento,CURP,Folio);
+    add constraint PK2 primary key(Folio);
 
 Create table Admon (
     User varchar(20) not null,
