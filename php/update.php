@@ -13,7 +13,7 @@
 	<table style="margin: 0 auto;" border="1">
 		<form action="updateproc.php" method="POST">
 		<tr>
-			<th colspan="9">Tabla de acutalización</th>
+			<th colspan="9">Tabla de actualización</th>
 		</tr>
 		<tr>
 			<th>CURP</th>

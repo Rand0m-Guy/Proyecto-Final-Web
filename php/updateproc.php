@@ -4,7 +4,7 @@
 	$folio=$_REQUEST['folio'];
 	$horario=$_REQUEST['horario'];
 	$tipo=$_REQUEST['tipo'];
-	$npersonas=$_REQUEST['menu'];
+	$npersonas=$_REQUEST['npers'];
 	$menu=$_REQUEST['menu'];
 	$lugar=$_REQUEST['lugar'];
 	$conexion = mysqli_connect("localhost","root","","proyectoweb");

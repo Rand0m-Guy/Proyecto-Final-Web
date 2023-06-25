@@ -45,11 +45,11 @@ $folio=$curp.$fecha;
 $alc_mun;
 $evt;
 echo "<body style='background-color:D5B5F7'>";
-echo "<h1 style='display:block'>EVENTO AGENDADO</h1>";
+echo "<h1 style='display:block'>Datos Agregados</h1>";
 echo "<h2><span style='color:red'>Folio: </span> $folio</h2>";
 echo "<h2>Datos del evento</h2>";
 echo "<p><b>Fecha del evento: </b> $fecha <br>";
-echo "Hora de inicio: ".$horario. " <br>";
+echo "Hora de inicio: ".$horario. " p.m<br>";
 if($menu=='ejecutivo')
 {
 	$opmenu="Ejecutivo";
@@ -140,7 +140,7 @@ $_SESSION['np']=$nump;
 $_SESSION['menu']=$opmenu;
 $_SESSION['lugarimg']=$fotolugar;
 ?>
-<a href="../html/formulario.html">
+<a href="formularioIframe.html">
 	<button>Modificar</button>
 </a>
 <a href="regbd.php">
