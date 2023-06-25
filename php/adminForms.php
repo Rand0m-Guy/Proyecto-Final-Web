@@ -50,7 +50,7 @@
         <!-- Div para el formulario -->
         <section class=" contenedor w-75 p-3  container my-3 position-relative"  id="contAdmin" >
             <h1>Administrador</h1>
-            <form name="loginAdmin" action="" method="post" id="loginAdmin">
+            <form name="loginAdmin" action="LoginAdmin.php?function=add&id_pag=1" method="post" id="loginAdmin">
                 <fieldset>
                     <div class="loginAdmin ">
                         <label for="usuario" class="">Usuario<span aria-label="required">*</span></label><br><br>
