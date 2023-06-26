@@ -4,17 +4,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../css/tabla.css"/>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&family=Sacramento&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Registros</title>
 
 </head>
 <body>
-	<table style="margin: 0 auto;" border="1">
+	<div  class="d-flex justify-content-center">
+	<table class="table table-responsive tabla border border-white">
 		<tr>
-			<th colspan="9">Registro de Contrataciones</th>
+			<th colspan="9" class="titulo">Registro de Contrataciones</th>
 		</tr>
-		<tr>
+		<tr class="colum">
 			<th>CURP</th>
 			<th>FechaEvento</th>
 
@@ -33,7 +38,7 @@
 				//por cada iteracion va llenando filas en la tabla
 				while ($show=mysqli_fetch_array($resultado)){	
 			?>
-		<tr>
+		<tr class="">
 			<td><?php echo $show['CURP']?></td>
 			<td><?php echo $show['FechaEvento']?></td>
 			<!-- <td>/td> -->
@@ -43,7 +48,15 @@
 			<td><?php echo $show['numPersonas']?></td>
 			<td><?php echo $show['Menu']?></td>
 			<td><?php echo $show['Lugar']?></td>
-			<td><a href="#" onclick="mostrarIframe()">Crear</a> | <a href="update.php?CURP=<?php echo $show['CURP'];?>">Editar</a> |<a href="eliminar.php?CURP=<?php echo $show['CURP'];?>" > Eliminar</a></td>
+
+			<td>
+			<div class="btn-group-vertical btn-group-sm boton">
+				<a class="btn btn-primary " href="#" onclick="mostrarIframe()" >Crear</a>  
+				<a class="btn btn-warning " href="update.php?CURP=<?php echo $show['CURP'];?>">Editar</a> 
+				<a class="btn btn-danger " href="eliminar.php?CURP=<?php echo $show['CURP'];?>" > Eliminar</a>
+				
+			</div>
+			</td>
 			
 
 		</tr>
@@ -52,7 +65,7 @@
 			?>
 
 	</table>
-	
+	</div>
 	<iframe id="iframeCrear" src="../html/formModificado.html" style="display: none;margin: 0 auto;" width="500px" height="500px" align="center"; ></iframe>
 	<!-- >Scripts auixilares para los vinculos<!--> 
 	<script>

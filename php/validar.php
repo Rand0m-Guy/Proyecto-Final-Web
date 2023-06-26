@@ -44,78 +44,105 @@ $folio=$curp.$fecha;
 //variable para guardar el municipio o alcaldía en la DB
 $alc_mun;
 $evt;
-echo "<body style='background-color:D5B5F7'>";
-echo "<h1 style='display:block'>EVENTO AGENDADO</h1>";
-echo "<h2><span style='color:red'>Folio: </span> $folio</h2>";
-echo "<h2>Datos del evento</h2>";
-echo "<p><b>Fecha del evento: </b> $fecha <br>";
-echo "Hora de inicio: ".$horario. "<br>";
+//html
+echo "<head>";
+	echo '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">';
+	echo '<link rel="stylesheet" type="text/css" href="../css/validar.css"/>';
+	echo '<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&family=Sacramento&display=swap" rel="stylesheet">';
+	echo '<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">';
+	echo '<title>Evento Agendado</title>';
+	echo "</head>";
 
-if($menu=='ejecutivo')
-{
-	$opmenu="Ejecutivo";
-}else{
-	$opmenu="Económico";
-}
-if($lugar=='salona')
-{
-	$place="Salón A";
-	echo "Lugar del evento: Salón A <br>";
-	$fotolugar="salon1-0.jpg";
-}
-elseif ($lugar=='salonb') {
-		$place="Salón B";
-		$fotolugar="salon2-2.jpg";
-	echo "Lugar del evento: Salón B <br>";
-}else{
-	echo "Lugar del evento: $lugar <br>";
-	$place="Jardín";
-	$fotolugar="jardin-0.jpg";
-}
-if(empty($otrot))
-{
-		switch($tipo)
-	{
-		case "cumple":
-			$evt="Cumpleaños";
-			break;
-		case "bautizo":
-			$evt="Bautizo";
-			break;
-		case "comunion":
-			$evt="Primera Comunión";
-			break;
-		case "boda":
-			$evt="Boda";
-			break;
-		case "quince":
-			$evt="XV años";
-			break;
-	}
-}else{
-	$evt=$otrot;
-}
-echo "Numero de personas: $nump <br>";
-echo "Menu: $menu <br>";
-echo "<h2>Datos del cliente</h2>Nombre: $nombre $appat $apmat <br>";
-echo "<b>Dirección</b><br>";
-echo "<ul>";
-echo "<li>Calle: $calle <br></li>";
-echo "<li>Colonia: $colonia <br></li>";
-echo "<li>Entidad federativa: $estado <br></li>";
+	echo "<body>";
+echo "<h1 class='titulo'>Revisa tus datos</h1>";
+echo "<div class='contenedor container  w-75 p-3 my-3 position-relative  d-flex flex-column'>";// div principal
+	echo "<h2 class='folio'>Folio: <span >$folio</span> </h2>";
+		echo '<section class="sec p-3 w-75 p-3 my-3 position-relative container">'; // section para datos del cliente
+	
+			echo "<h2 class='subtitulo'>Tus datos</h2>";
+			echo '<div class="datos">';
+				echo "<b>Nombre:</b> $nombre $appat $apmat <br>";
+				echo "CURP: $curp <br>";
+				echo "Correo: $mail <br> Telefono: $tel <br>";
 
-//para saber si es municipio o alcaldía
-if (empty($municipio)) {
-	echo "<li>Alcaldía: $alcald</li>";
-	$alc_mun=$alcald;
-}else{
-	echo "<li>Municipio: $municipio </li>";
-	$alc_mun=$municipio;
-}
-echo "</ul>";
-echo "CURP: $curp <br>";
-echo "Correo: $mail <br> Telefono: $tel <br>";
-echo "</body>";
+				echo '<hr class="">';
+
+				echo "<b>Dirección</b><br>";
+				echo "<ul>";
+				echo "<li>Calle: $calle <br></li>";
+				echo "<li>Colonia: $colonia <br></li>";
+				echo "<li>Entidad federativa: $estado <br></li>";
+
+				//para saber si es municipio o alcaldía
+				if (empty($municipio)) {
+					echo "<li>Alcaldía: $alcald</li>";
+					$alc_mun=$alcald;
+				}else{
+					echo "<li>Municipio: $municipio </li>";
+					$alc_mun=$municipio;
+				}
+				echo "</ul>";
+			echo '</div>';
+			
+		echo "</section>";	
+
+		echo '<section class="sec w-75 p-3 my-3 position-relative" >'; // contenedor para datos del evento		
+
+			echo "<h2 class='subtitulo'>Datos del evento</h2>";
+			echo '<div class="datos">';	
+					echo "<p><b>Fecha del evento: </b> $fecha <br>";
+					echo "Hora de inicio: ".$horario. "<br>";
+
+				if($menu=='ejecutivo')
+				{
+					$opmenu="Ejecutivo";
+				}else{
+					$opmenu="Económico";
+				}
+				if($lugar=='salona')
+				{
+					$place="Salón A";
+					echo "Lugar del evento: Salón A <br>";
+					$fotolugar="salon1-0.jpg";
+				}
+				elseif ($lugar=='salonb') {
+						$place="Salón B";
+						$fotolugar="salon2-2.jpg";
+					echo "Lugar del evento: Salón B <br>";
+				}else{
+					echo "Lugar del evento: $lugar <br>";
+					$place="Jardín";
+					$fotolugar="jardin-0.jpg";
+				}
+				if(empty($otrot))
+				{
+						switch($tipo)
+					{
+						case "cumple":
+							$evt="Cumpleaños";
+							break;
+						case "bautizo":
+							$evt="Bautizo";
+							break;
+						case "comunion":
+							$evt="Primera Comunión";
+							break;
+						case "boda":
+							$evt="Boda";
+							break;
+						case "quince":
+							$evt="XV años";
+							break;
+					}
+				}else{
+					$evt=$otrot;
+				}
+				echo "Numero de personas: $nump <br>";
+				echo "Menu: $menu <br>";
+			echo '</div>';
+		echo '</section>';		
+echo '</div>';	
+echo "</body>";	
 session_start();
 
 //Sesiones para traslado a BD
@@ -141,10 +168,18 @@ $_SESSION['np']=$nump;
 $_SESSION['menu']=$opmenu;
 $_SESSION['lugarimg']=$fotolugar;
 ?>
-<a href="../html/formulario.html">
-	<button>Modificar</button>
-</a>
-<a href="regbd.php">
-	<button>Confirmar</button>
-</a>
+<div class="d-grid gap-2 col-6 mx-auto position-relative mx-auto">
+    <div class="d-flex justify-content-center">
+        <div class="btn text-wrap">
+            <a href="../html/formulario.html">
+                <button class="boton mx-xxl-5">Modificar</button>
+            </a>
+        </div>
+        <div class="btn text-wrap">
+            <a href="regbd.php">
+                <button class="boton mx-xxl-5">Confirmar</button>
+            </a>
+        </div>
+    </div>
+</div>
 <script src="../js/actualizacionDinamica.js"></script>

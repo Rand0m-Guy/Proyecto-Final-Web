@@ -1,0 +1,43 @@
+body {
+    background-image: url("../img/b-admin.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+   
+}
+
+
+.tabla{
+   
+        background-color: rgba(28, 33, 51, 0.6);
+        height:auto;
+        width: auto;
+        margin: 3vh;
+        display: block;
+    
+   
+
+}
+.titulo{
+    color: #fdd700;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 3vw;
+    text-align: center;
+}
+
+.colum{
+    overflow: hidden;
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.5vw;
+}
+
+td{
+    color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.2vw;
+}
