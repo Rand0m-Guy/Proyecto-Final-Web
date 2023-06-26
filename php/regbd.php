@@ -36,6 +36,11 @@
         $num_personas=$_SESSION['np'];
         $menu=$_SESSION['menu'];
         $fotolugar=$_SESSION['lugarimg'];
+        $menuPdf=$_SESSION['menupdf'];
+        $alcaldiaPdf=$_SESSION['alcaldiapdf'];
+        $estadoPdf=$_SESSION['estadopdf'];
+        $lugarimg=$_SESSION['lugarimg'];
+        $lugarpf=$_SESSION['lugarpf'];
         $conexion = mysqli_connect("localhost","root", "","proyectoweb");
 
 
@@ -47,7 +52,7 @@
             $insertCliente = "INSERT INTO Cliente VALUES('$curp','$nombre','$apmat','$appat','$calle',$num_ext,'$num_int','$colonia','$alc_o_mun','$cp','$entidad','$correo','$tel')";
             $resultado = mysqli_query($conexion, $insertCliente);
         }
-        $selectContratacion = "SELECT * FROM Contratacion WHERE Lugar='$lugar' AND FechaEvento='$fecha' AND Horario='$hora'";
+        $selectContratacion = "SELECT * FROM Contratacion WHERE Lugar='$lugarpf' AND FechaEvento='$fecha' AND Horario='$hora'";
         $resultado = mysqli_query($conexion, $selectContratacion);
         $registros=mysqli_num_rows($resultado);
         if ($registros==0){

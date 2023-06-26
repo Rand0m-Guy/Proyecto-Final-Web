@@ -13,14 +13,14 @@ $num_ext=$_SESSION['nex'];
 $num_int=$_SESSION['nin'];
 $colonia=$_SESSION['col'];
 $cp=$_SESSION['cop'];
-$entidad=$_SESSION['entidad'];
+$entidad=$_SESSION['estadopdf'];
 $alc_o_mun=$_SESSION['alcmun'];
 $lugar=$_SESSION['lugarpf'];
 $fecha=$_SESSION['date'];
 $hora=$_SESSION['hora'];
 $tipo_evento=$_SESSION['tipo'];
 $num_personas=$_SESSION['np'];
-$menu=$_SESSION['menu'];
+$menu=$_SESSION['menupdf'];
 $fotolugar=$_SESSION['lugarimg'];
 require('fpdf185/fpdf.php');
 
