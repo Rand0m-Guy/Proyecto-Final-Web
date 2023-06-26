@@ -1,4 +1,8 @@
 <?php
+if ( !($_GET['function']='add' && $_GET['id_pag'])){
+	header("Location: ../html/Principal.html");
+	exit;
+}
 $nombre=$_REQUEST['nombre'];
 $appat=$_REQUEST['apellidoP'];
 $apmat=$_REQUEST['apellidoM'];
@@ -10,7 +14,7 @@ $numex=$_REQUEST['num'];
 $numin=$_REQUEST['interior'];
 $codp=$_REQUEST['cp'];
 $colonia=$_REQUEST['colonia'];
-$estado=ucfirst($_REQUEST['entidad']);
+$estado=$_REQUEST['entidad'];
 $municipio=$_REQUEST['municipio'];
 $alcald=$_REQUEST['alcaldia'];
 $lugar=$_REQUEST['lugar'];
@@ -95,56 +99,71 @@ echo "<div class='contenedor container flex-column d-flex mb-3'>";// div princip
 					echo "<p><b>Fecha del evento: </b> $fecha <br>";
 					echo "Hora de inicio: ".$horario. "<br>";
 
-				if($menu=='ejecutivo')
-				{
-					$opmenu="Ejecutivo";
-				}else{
-					$opmenu="Económico";
-				}
-				if($lugar=='salona')
-				{
-					$place="Salón A";
-					echo "Lugar del evento: Salón A <br>";
-					$fotolugar="salon1-0.jpg";
-				}
-				elseif ($lugar=='salonb') {
-						$place="Salón B";
-						$fotolugar="salon2-2.jpg";
-					echo "Lugar del evento: Salón B <br>";
-				}else{
-					echo "Lugar del evento: $lugar <br>";
-					$place="Jardín";
-					$fotolugar="jardin-0.jpg";
-				}
-				if(empty($otrot))
-				{
-						switch($tipo)
-					{
-						case "cumple":
-							$evt="Cumpleaños";
-							break;
-						case "bautizo":
-							$evt="Bautizo";
-							break;
-						case "comunion":
-							$evt="Primera Comunión";
-							break;
-						case "boda":
-							$evt="Boda";
-							break;
-						case "quince":
-							$evt="XV años";
-							break;
-					}
-				}else{
-					$evt=$otrot;
-				}
-				echo "Numero de personas: $nump <br>";
-				echo "Menu: $menu <br>";
-			echo '</div>';
-		echo '</section>';		
-echo '</div>';	
-echo "</body>";	
+if($menu=='ejecutivo')
+{
+	$opmenu="Ejecutivo";
+}else{
+	$opmenu="Económico";
+}
+if($lugar=='salona')
+{
+	$place="Salón A";
+	echo "Lugar del evento: Salón A <br>";
+	$fotolugar="salon1-0.jpg";
+}
+elseif ($lugar=='salonb') {
+		$place="Salón B";
+		$fotolugar="salon2-2.jpg";
+	echo "Lugar del evento: Salón B <br>";
+}else{
+	echo "Lugar del evento: $lugar <br>";
+	$place="Jardín";
+	$fotolugar="jardin-0.jpg";
+}
+if(empty($otrot))
+{
+		switch($tipo)
+	{
+		case "cumple":
+			$evt="Cumpleaños";
+			break;
+		case "bautizo":
+			$evt="Bautizo";
+			break;
+		case "comunion":
+			$evt="Primera Comunión";
+			break;
+		case "boda":
+			$evt="Boda";
+			break;
+		case "quince":
+			$evt="XV años";
+			break;
+	}
+}else{
+	$evt=$otrot;
+}
+echo "Numero de personas: $nump <br>";
+echo "Menu: $menus[$menu] <br>";
+echo "<h2>Datos del cliente</h2>Nombre: $nombre $appat $apmat <br>";
+echo "<b>Dirección</b><br>";
+echo "<ul>";
+echo "<li>Calle: $calle <br></li>";
+echo "<li>Colonia: $colonia <br></li>";
+echo "<li>Entidad federativa: $estados[$estado] <br></li>";
+
+//para saber si es municipio o alcaldía
+if (empty($municipio)) {
+	echo "<li>Alcaldía: $alcaldias[$alcald]</li>";
+	$alc_mun=$alcald;
+}else{
+	echo "<li>Municipio: $municipio </li>";
+	$alc_mun=$municipio;
+}
+echo "</ul>";
+echo "CURP: $curp <br>";
+echo "Correo: $mail <br> Telefono: $tel <br>";
+echo "</body>";
 session_start();
 
 //Sesiones para traslado a BD
@@ -162,23 +181,29 @@ $_SESSION['col']=$colonia;
 $_SESSION['cop']=$codp;
 $_SESSION['entidad']=$estado;
 $_SESSION['alcmun']=$alc_mun;
-$_SESSION['lugar']=$place;
+$_SESSION['lugarpf']=$place;
+$_SESSION['lugar']=$lugar;
 $_SESSION['date']=$fecha;
 $_SESSION['hora']=$horario;
 $_SESSION['tipo']=$evt;
 $_SESSION['np']=$nump;
 $_SESSION['menu']=$opmenu;
 $_SESSION['lugarimg']=$fotolugar;
+$_SESSION['municipio']=$municipio;
+$_SESSION['alcaldia']=$alcald;
+$_SESSION['menu']=$menu;
+$_SESSION['tipod']=$tipo;
+$_SESSION['otrotipo']=$otrot;
 ?>
 <div class="d-grid gap-2 mx-auto position-relative mx-auto">
     <div class="d-flex justify-content-center">
         <div class="btn text-wrap">
-            <a href="../html/formulario.html">
+            <a href="modreg.php">
                 <button class="boton mx-xxl-5">Modificar</button>
             </a>
         </div>
         <div class="btn text-wrap">
-            <a href="regbd.php">
+            <a href="regbd.php?function=add&id_pag=1">
                 <button class="boton mx-xxl-5">Confirmar</button>
             </a>
         </div>

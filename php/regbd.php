@@ -15,6 +15,10 @@
 </head>
 <body>
 <?php
+        if ( !($_GET['function']='add' && $_GET['id_pag'])){
+            header("Location: ../html/Principal.html");
+            exit;
+        }
         session_start();
         $curp=$_SESSION['curp'];
         $folio=$_SESSION['folio'];
@@ -38,7 +42,7 @@
         $num_personas=$_SESSION['np'];
         $menu=$_SESSION['menu'];
         $fotolugar=$_SESSION['lugarimg'];
-        $conexion = mysqli_connect("localhost","root","","proyectoweb");
+        $conexion = mysqli_connect("localhost","root", "n0m3l0","proyectoweb");
 
 
         $selectCliente = "SELECT CURP FROM CLIENTE WHERE CURP='$curp'";
@@ -84,7 +88,7 @@
                     <p>Salón, Fecha y Horas ya reservadas</p>
                   </div>
                   <div class="modal-footer">
-                    <a href="../html/formulario.html"><button type="button" class="btn btn-primary">OK</button></a>
+                    <a href="formulario.php?function=add&id_pag=1"><button type="button" class="btn btn-primary">OK</button></a>
                   </div>
                 </div>
               </div>
