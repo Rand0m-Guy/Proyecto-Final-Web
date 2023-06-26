@@ -47,17 +47,19 @@ $evt;
 //html
 echo "<head>";
 	echo '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">';
-	echo '<link rel="stylesheet" type="text/css" href="../css/validar.css"/>';
+	echo '<link rel="stylesheet" type="text/css" href="../css/validar.css">';
 	echo '<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&family=Sacramento&display=swap" rel="stylesheet">';
 	echo '<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">';
 	echo '<title>Evento Agendado</title>';
+	echo '<meta content="width=device-width, initial-scale=1" name="viewport" />';
 	echo "</head>";
 
 	echo "<body>";
 echo "<h1 class='titulo'>Revisa tus datos</h1>";
-echo "<div class='contenedor container  w-75 p-3 my-3 position-relative  d-flex flex-column'>";// div principal
+
+echo "<div class='contenedor container flex-column d-flex mb-3'>";// div principal
 	echo "<h2 class='folio'>Folio: <span >$folio</span> </h2>";
-		echo '<section class="sec p-3 w-75 p-3 my-3 position-relative container">'; // section para datos del cliente
+		echo '<section class="sec  container ">'; // section para datos del cliente
 	
 			echo "<h2 class='subtitulo'>Tus datos</h2>";
 			echo '<div class="datos">';
@@ -86,7 +88,7 @@ echo "<div class='contenedor container  w-75 p-3 my-3 position-relative  d-flex 
 			
 		echo "</section>";	
 
-		echo '<section class="sec w-75 p-3 my-3 position-relative" >'; // contenedor para datos del evento		
+		echo '<section class="sec" >'; // contenedor para datos del evento		
 
 			echo "<h2 class='subtitulo'>Datos del evento</h2>";
 			echo '<div class="datos">';	
@@ -168,7 +170,7 @@ $_SESSION['np']=$nump;
 $_SESSION['menu']=$opmenu;
 $_SESSION['lugarimg']=$fotolugar;
 ?>
-<div class="d-grid gap-2 col-6 mx-auto position-relative mx-auto">
+<div class="d-grid gap-2 mx-auto position-relative mx-auto">
     <div class="d-flex justify-content-center">
         <div class="btn text-wrap">
             <a href="../html/formulario.html">
