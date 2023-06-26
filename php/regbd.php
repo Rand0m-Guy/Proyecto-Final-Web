@@ -36,7 +36,7 @@
         $num_personas=$_SESSION['np'];
         $menu=$_SESSION['menu'];
         $fotolugar=$_SESSION['lugarimg'];
-        $conexion = mysqli_connect("localhost","root", "n0m3l0","proyectoweb");
+        $conexion = mysqli_connect("localhost","root", "","proyectoweb");
 
 
         $selectCliente = "SELECT CURP FROM CLIENTE WHERE CURP='$curp'";

@@ -1,7 +1,7 @@
 <?php
     $folio=$_REQUEST['folio'];
 
-    $conexion = mysqli_connect("localhost","root", "n0m3l0","proyectoweb");
+    $conexion = mysqli_connect("localhost","root", "","proyectoweb");
 
     $selectContratacion = "SELECT * FROM Contratacion WHERE Folio='$folio'";
     $resultado = mysqli_query($conexion, $selectContratacion);
