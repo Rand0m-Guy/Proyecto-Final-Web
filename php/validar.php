@@ -32,7 +32,7 @@ $fotolugar;
 
 	 $estados=array('aguascalientes'=>'Aguascalientes','bajacalifornia'=>'Baja California','bajacaliforniasur'=>'Baja California Sur','campeche'=>'Campeche','chiapas'=>'Chiapas','chihuahua'=>'Chihuahua','cdmx'=>'CDMX','coahuila'=>'Coahuila','colima'=>'Colima','durango'=>'Durango','guanajuato'=>'Guanajuato','guerrero'=>'Guerrero','hidalgo'=>'Hidalgo','jalisco'=>'Jalisco','edomex'=>'Estado de México','michoacan'=>'Michoacán','morelos'=>'Morelos','nayarit'=>'','nuevoleon'=>'Nuevo León','oaxaca'=>'Oaxaca','puebla'=>'Pueba','queretaro'=>'Querétaro','quintanaroo'=>'Quintana Roo','sanluispotosi'=>'San Luis Potosí','sinaloa'=>'Sinaloa','sonora'=>'Sonora','tabasco'=>'Tabasco','tamaulipas'=>'Tamaulipas','tlaxcala'=>'Tlaxcala','veracruz'=>'Veracruz','yucatan'=>'Yucatán','zacatecas'=>'Zacatecas');
 
-    $alcaldias = array('alvaroobregon' =>'Álvaro Obregón','azcapotzalco' =>'Azcapotzalco','bj' =>'Benito Juárez','coyoacan' =>'Coyoacán','cuajimalpa' =>'Cuajimalpa','cuauhtemoc' =>'Cuauhtémoc','madero' =>'Gustavo A. Madero','iztacalco' =>'Iztacalco','iztapalapa' =>'Iztapalapa','mcontreras' =>'Magdalena Contreras','hidalgo' =>'Miguel Hidalgo','malta' =>'Milpa Alta','tlahuac' =>'Tláhuac','tlalpan' =>'Tlalpan','carranza' =>'Venustiano Carranza','xochimilco' =>'Xochimilco' );
+    $alcaldias = array('alvaroobregon' =>'Álvaro Obregón','azcapotzalco' =>'Azcapotzalco','bj' =>'Benito Juárez','coyoacan' =>'Coyoacán','cuajimalpa' =>'Cuajimalpa','cuauhtemoc' =>'Cuauhtémoc','madero' =>'Gustavo A. Madero','iztacalco' =>'Iztacalco','iztapalapa' =>'Iztapalapa','mcontreras' =>'Magdalena Contreras','hidalgo' =>'Miguel Hidalgo','malta' =>'Milpa Alta','tlahuac' =>'Tláhuac','tlalpan' =>'Tlalpan','carranza' =>'Venustiano Carranza','xochimilco' =>'Xochimilco', 'ninguno'=>'Ninguna alcaldia' );
 
     $eventos  = array('bautizo' =>'Bautizo' ,'comunion' =>'Primera Comunión' ,'quince' =>'XV Años' ,'boda' =>'Boda' ,'cumple' =>'Cumpleaños' ,'otro' =>'Otro'  );
     $lugares = array('salona' => 'Salón A','salonb' =>'Salón B' ,'jardin' =>'Jardín');
@@ -78,7 +78,7 @@ elseif ($lugar=='salonb') {
 }
 if(empty($otrot))
 {
-		switch($tipo)
+	switch($tipo)
 	{
 		case "cumple":
 			$evt="Cumpleaños";
@@ -99,6 +99,7 @@ if(empty($otrot))
 }else{
 	$evt=$otrot;
 }
+
 echo "Numero de personas: $nump <br>";
 echo "Menu: $menus[$menu] <br>";
 echo "<h2>Datos del cliente</h2>Nombre: $nombre $appat $apmat <br>";
@@ -143,13 +144,15 @@ $_SESSION['date']=$fecha;
 $_SESSION['hora']=$horario;
 $_SESSION['tipo']=$evt;
 $_SESSION['np']=$nump;
-$_SESSION['menu']=$opmenu;
-$_SESSION['lugarimg']=$fotolugar;
 $_SESSION['municipio']=$municipio;
 $_SESSION['alcaldia']=$alcald;
 $_SESSION['menu']=$menu;
+$_SESSION['alcaldiapdf']=$alcaldias[$alcald];
+$_SESSION['estadopdf']=$estados[$estado];
+$_SESSION['menupdf']=$menus[$menu];
+$_SESSION['lugarimg']=$fotolugar;
 $_SESSION['tipod']=$tipo;
-$_SESSION['otrotipo']=$otrot;
+$_SESSION['tipootro']=$otrot;
 ?>
 <a href="modreg.php">
 	<button>Modificar</button>

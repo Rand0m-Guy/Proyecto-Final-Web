@@ -24,8 +24,11 @@
     $municipio=$_SESSION['municipio'];
     $alcaldia=$_SESSION['alcaldia'];
     $tipodef=$_SESSION['tipod'];
-    $tipootro=$_SESSION['otrotipo'];
+    $tipootro=$_SESSION['tipootro'];
     $lugarpdf=$_SESSION['lugarpf'];
+    $menupdf=$_SESSION['menupdf'];
+    $img=$_SESSION['lugarimg'];
+    $estadopdf=$_SESSION['estadopdf'];
 
     $estados=array('aguascalientes'=>'Aguascalientes','bajacalifornia'=>'Baja California','bajacaliforniasur'=>'Baja California Sur','campeche'=>'Campeche','chiapas'=>'Chiapas','chihuahua'=>'Chihuahua','cdmx'=>'CDMX','coahuila'=>'Coahuila','colima'=>'Colima','durango'=>'Durango','guanajuato'=>'Guanajuato','guerrero'=>'Guerrero','hidalgo'=>'Hidalgo','jalisco'=>'Jalisco','edomex'=>'Estado de México','michoacan'=>'Michoacán','morelos'=>'Morelos','nayarit'=>'','nuevoleon'=>'Nuevo León','oaxaca'=>'Oaxaca','puebla'=>'Pueba','queretaro'=>'Querétaro','quintanaroo'=>'Quintana Roo','sanluispotosi'=>'San Luis Potosí','sinaloa'=>'Sinaloa','sonora'=>'Sonora','tabasco'=>'Tabasco','tamaulipas'=>'Tamaulipas','tlaxcala'=>'Tlaxcala','veracruz'=>'Veracruz','yucatan'=>'Yucatán','zacatecas'=>'Zacatecas');
 
