@@ -10,7 +10,7 @@ $numex=$_REQUEST['num'];
 $numin=$_REQUEST['interior'];
 $codp=$_REQUEST['cp'];
 $colonia=$_REQUEST['colonia'];
-$estado=ucfirst($_REQUEST['entidad']);
+$estado=$_REQUEST['entidad'];
 $municipio=$_REQUEST['municipio'];
 $alcald=$_REQUEST['alcaldia'];
 $lugar=$_REQUEST['lugar'];
@@ -26,13 +26,13 @@ $place;
 $fotolugar;
 //hashmaps para convertir a nombres correctos
 
-	 $estados=array('aguascalientes'=>'Aguascalientes','bajacalifornia'=>'Baja California','bajacaliforniasur'=>'Baja California Sur','campeche'=>'Campeche','chiapas'=>'Chiapas','chihuahua'=>'Chihuahua','cdmx'=>'CDMX','coahuila'=>'Coahuila','colima'=>'Colima','durango'=>'Durango','guanajuato'=>'Guanajuato','guerrero'=>'Guerrero','hidalgo'=>'Hidalgo','jalisco'=>'Jalisco','edomex'=>'Estado de México','michoacan'=>'Michoacán','morelos'=>'Morelos','nayarit'=>'','nuevoleon'=>'Nuevo León','oaxaca'=>'Oaxaca','puebla'=>'Pueba','queretaro'=>'Querétaro','quintanaroo'=>'Quintana Roo','sanluispotosi'=>'San Luis Potosí','sinaloa'=>'Sinaloa','sonora'=>'Sonora','tabasco'=>'Tabasco','tamaulipas'=>'Tamaulipas','tlaxcala'=>'Tlaxcala','veracruz'=>'Veracruz','yucatan'=>'Yucatán','zacatecas'=>'Zacatecas');
+	$estados=array('aguascalientes'=>'Aguascalientes','bajacalifornia'=>'Baja California','bajacaliforniasur'=>'Baja California Sur','campeche'=>'Campeche','chiapas'=>'Chiapas','chihuahua'=>'Chihuahua','cdmx'=>'CDMX','coahuila'=>'Coahuila','colima'=>'Colima','durango'=>'Durango','guanajuato'=>'Guanajuato','guerrero'=>'Guerrero','hidalgo'=>'Hidalgo','jalisco'=>'Jalisco','edomex'=>'Estado de México','michoacan'=>'Michoacán','morelos'=>'Morelos','nayarit'=>'','nuevoleon'=>'Nuevo León','oaxaca'=>'Oaxaca','puebla'=>'Puebla','queretaro'=>'Querétaro','quintanaroo'=>'Quintana Roo','sanluispotosi'=>'San Luis Potosí','sinaloa'=>'Sinaloa','sonora'=>'Sonora','tabasco'=>'Tabasco','tamaulipas'=>'Tamaulipas','tlaxcala'=>'Tlaxcala','veracruz'=>'Veracruz','yucatan'=>'Yucatán','zacatecas'=>'Zacatecas');
 
-    $alcaldias = array('alvaroobregon' =>'Álvaro Obregón','azcapotzalco' =>'Azcapotzalco','bj' =>'Benito Juárez','coyoacan' =>'Coyoacán','cuajimalpa' =>'Cuajimalpa','cuauhtemoc' =>'Cuauhtémoc','madero' =>'Gustavo A. Madero','iztacalco' =>'Iztacalco','iztapalapa' =>'Iztapalapa','mcontreras' =>'Magdalena Contreras','hidalgo' =>'Miguel Hidalgo','malta' =>'Milpa Alta','tlahuac' =>'Tláhuac','tlalpan' =>'Tlalpan','carranza' =>'Venustiano Carranza','xochimilco' =>'Xochimilco' );
+	$alcaldias = array('alvaroobregon' =>'Álvaro Obregón','azcapotzalco' =>'Azcapotzalco','bj' =>'Benito Juárez','coyoacan' =>'Coyoacán','cuajimalpa' =>'Cuajimalpa','cuauhtemoc' =>'Cuauhtémoc','madero' =>'Gustavo A. Madero','iztacalco' =>'Iztacalco','iztapalapa' =>'Iztapalapa','mcontreras' =>'Magdalena Contreras','hidalgo' =>'Miguel Hidalgo','malta' =>'Milpa Alta','tlahuac' =>'Tláhuac','tlalpan' =>'Tlalpan','carranza' =>'Venustiano Carranza','xochimilco' =>'Xochimilco', 'ninguno'=>'Ninguna alcaldia' );
 
-    $eventos  = array('bautizo' =>'Bautizo' ,'comunion' =>'Primera Comunión' ,'quince' =>'XV Años' ,'boda' =>'Boda' ,'cumple' =>'Cumpleaños' ,'otro' =>'Otro'  );
-    $lugares = array('salona' => 'Salón A','salonb' =>'Salón B' ,'jardin' =>'Jardín');
-    $menus = array('economico'=>'Económico','ejecutivo'=>'Ejecutivo');
+	$eventos  = array('bautizo' =>'Bautizo' ,'comunion' =>'Primera Comunión' ,'quince' =>'XV Años' ,'boda' =>'Boda' ,'cumple' =>'Cumpleaños' ,'otro' =>'Otro'  );
+	$lugares = array('salona' => 'Salón A','salonb' =>'Salón B' ,'jardin' =>'Jardín');
+	$menus = array('economico'=>'Económico','ejecutivo'=>'Ejecutivo');
 /*
 //Variables para almacenar la hora de inicio y fin
 $horainicio=substr($horario, 0, 2);
@@ -132,13 +132,21 @@ $_SESSION['col']=$colonia;
 $_SESSION['cop']=$codp;
 $_SESSION['entidad']=$estado;
 $_SESSION['alcmun']=$alc_mun;
-$_SESSION['lugar']=$place;
+$_SESSION['lugarpf']=$place;
+$_SESSION['lugar']=$lugar;
 $_SESSION['date']=$fecha;
 $_SESSION['hora']=$horario;
 $_SESSION['tipo']=$evt;
 $_SESSION['np']=$nump;
-$_SESSION['menu']=$opmenu;
+$_SESSION['municipio']=$municipio;
+$_SESSION['alcaldia']=$alcald;
+$_SESSION['menu']=$menu;
+$_SESSION['alcaldiapdf']=$alcaldias[$alcald];
+$_SESSION['estadopdf']=$estados[$estado];
+$_SESSION['menupdf']=$menus[$menu];
 $_SESSION['lugarimg']=$fotolugar;
+$_SESSION['tipod']=$tipo;
+$_SESSION['tipootro']=$otrot;
 ?>
 <a href="../html/formModificado.html">
 	<button>Modificar</button>

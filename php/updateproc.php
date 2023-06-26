@@ -8,7 +8,7 @@
 	$menu=$_REQUEST['menu'];
 	$lugar=$_REQUEST['lugar'];
 	$newfolio=$varup.$fecha;
-	$conexion = mysqli_connect("localhost","root", "n0m3l0","proyectoweb");
+	$conexion = mysqli_connect("localhost","root", "","proyectoweb");
 	$update= "UPDATE contratacion SET FechaEvento='$fecha', Folio='$newfolio', Horario='$horario', tipoEvento='$tipo', numPersonas='$npersonas', Menu='$menu', Lugar='$lugar' WHERE CURP='$varup'";
 	$result=mysqli_query($conexion, $update);
 	if($result)

@@ -11,7 +11,7 @@
 		header("Location: ../html/Principal.html");
 	}
 	
-	$conexion=mysqli_connect("localhost", "root", "n0m3l0", "proyectoweb");
+	$conexion=mysqli_connect("localhost", "root", "", "proyectoweb");
 	$id=$_GET['CURP'];
 
 	if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {

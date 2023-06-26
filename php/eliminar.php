@@ -1,6 +1,6 @@
 <?php
 
-	$conexion=mysqli_connect("localhost", "root", "n0m3l0", "proyectoweb");
+	$conexion=mysqli_connect("localhost", "root", "", "proyectoweb");
 	$id=$_GET['CURP'];
 	$delcontrat="DELETE FROM contratacion where CURP='$id'";
 	$delcliente="DELETE FROM cliente where CURP='$id'";

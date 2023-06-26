@@ -5,7 +5,7 @@ if ( !($_GET['function']='add' && $_GET['id_pag'])){
 }
 $user=$_POST['usuario']; 
 $password=$_POST['contra']; 
-$conexion=mysqli_connect("localhost","root", "n0m3l0","proyectoweb"); 
+$conexion=mysqli_connect("localhost","root", "","proyectoweb"); 
 $consulta="SELECT * FROM admon where Pass='$password'"; 
 $resultado=mysqli_query($conexion,$consulta);
 $registros=mysqli_num_rows($resultado);
@@ -16,6 +16,6 @@ $registros=mysqli_num_rows($resultado);
 	 	header("Location: plantillatabla.php?function=add&id_pag=1");
 	 	exit;
 	}else{
-	 echo "<script>alert('Administrador no registrado');</script>";
+	 echo "<script>alert('Administrador no registrado'); window.location = 'adminForms.php?function=add&id_pag=1';</script>";
 	}
 ?>
