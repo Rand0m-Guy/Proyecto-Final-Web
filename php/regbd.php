@@ -37,7 +37,6 @@
         $menu=$_SESSION['menu'];
         $fotolugar=$_SESSION['lugarimg'];
         $menuPdf=$_SESSION['menupdf'];
-        $alcaldiaPdf=$_SESSION['alcaldiapdf'];
         $estadoPdf=$_SESSION['estadopdf'];
         $lugarimg=$_SESSION['lugarimg'];
         $lugarpf=$_SESSION['lugarpf'];
