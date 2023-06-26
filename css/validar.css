@@ -44,6 +44,7 @@ hr {
     width: 60vw;
     margin: auto;
     overflow: hidden;
+    height: auto;
 }
 
 .sec {
@@ -54,7 +55,7 @@ hr {
     width: 50vw;
     display: block;
     margin-bottom: 2rem;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .folio {

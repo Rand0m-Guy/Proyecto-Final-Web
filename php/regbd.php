@@ -69,7 +69,7 @@
                 <div class="d-flex justify-content-center">
                     <div class="d-grid gap-2 col-6 mx-auto position-relative mx-auto">
                         <div class="btn text-wrap btn-sm">
-                            <a href="../pdf.php"><button class="boton">Generar PDF</button></a>
+                            <a href="../pdf.php" target="_blank"><button class="boton">Generar PDF</button></a>
                         </div>
                         <div class="btn text-wrap ">
                             <a href="../html/Principal.html" onclick="cerrarSesion()"><button class="boton" >Regresar</button></a>
