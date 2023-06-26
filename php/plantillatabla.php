@@ -4,6 +4,19 @@
         header("Location: ../html/Principal.html");
         exit;
     }
+
+	session_start();
+	$validacion = $_SESSION['valid'];
+	if($validacion != "16022236204009818131831320183") {
+		session_destroy();
+		header("Location: ../html/Principal.html");
+	}
+
+	if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
+		session_destroy();
+		session_unset();
+	}
+	$_SESSION['LAST_ACTIVITY'] = time();
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,7 +24,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Registros</title>
-
+	<script src="../js/jquery-3.6.4.min.js" type="text/javascript"></script>
+	<script src="../js/cerrarSessionAJAX.js" type="text/javascript"></script>
 </head>
 <body>
 	<table style="margin: 0 auto;" border="1">
@@ -47,7 +61,7 @@
 			<td><?php echo $show['numPersonas']?></td>
 			<td><?php echo $show['Menu']?></td>
 			<td><?php echo $show['Lugar']?></td>
-			<td><a href="#" onclick="mostrarIframe()">Crear</a> | <a href="update.php?CURP=<?php echo $show['CURP'];?>">Editar</a> |<a href="eliminar.php?CURP=<?php echo $show['CURP'];?>" > Eliminar</a></td>
+			<td><a href="#" onclick="mostrarIframe()">Crear</a> | <a href="update.php?CURP=<?php echo $show['CURP'];?>&function=add&id_pag=1">Editar</a> |<a href="eliminar.php?CURP=<?php echo $show['CURP'];?>&function=add&id_pag=1" > Eliminar</a></td>
 			
 
 		</tr>
@@ -69,6 +83,6 @@
 			}
 		}
 	</script>
-	
+	<a href=# onclick="cerrarSesion()"><button>Regresar</button></a>
 </body>
 </html>

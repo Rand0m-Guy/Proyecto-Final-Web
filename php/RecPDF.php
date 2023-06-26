@@ -39,13 +39,13 @@
 		$_SESSION['tipo']=$evento['tipoEvento'];
 		$_SESSION['np']=$evento['numPersonas'];
 		$_SESSION['menu']=$evento['Menu'];
-		if($cliente['Lugar']=='Salón A'){
+		if($evento['Lugar']=='Salón A'){
 			$_SESSION['lugarimg']="salon1-0.jpg";
 		}
-		if($cliente['Lugar']=='Salón B'){
+		if($evento['Lugar']=='Salón B'){
 			$_SESSION['lugarimg']="salon2-2.jpg";
 		}
-		if($cliente['Lugar']=='Jardín'){
+		if($evento['Lugar']=='Jardín'){
 			$_SESSION['lugarimg']="jardin-0.jpg";
 		}
 		// RUTA A PDF

@@ -10,9 +10,11 @@ $consulta="SELECT * FROM admon where Pass='$password'";
 $resultado=mysqli_query($conexion,$consulta);
 $registros=mysqli_num_rows($resultado);
 	if($registros>0){
-	 header("Location: plantillatabla.php?function=add&id_pag=1");
-	 exit;
-	
+		session_start();
+		//Sesiones para traslado a BD
+		$_SESSION['valid']="16022236204009818131831320183"; // Número primo grande para usar como validación
+	 	header("Location: plantillatabla.php?function=add&id_pag=1");
+	 	exit;
 	}else{
 	 echo "<script>alert('Administrador no registrado');</script>";
 	}

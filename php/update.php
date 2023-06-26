@@ -1,13 +1,31 @@
 <?php
+	if ( !($_GET['function']='add' && $_GET['id_pag'])){
+        header("Location: ../html/Principal.html");
+        exit;
+    }
+
+    session_start();
+	$validacion = $_SESSION['valid'];
+	if($validacion != "16022236204009818131831320183") {
+		session_destroy();
+		header("Location: ../html/Principal.html");
+	}
+	
 	$conexion=mysqli_connect("localhost", "root", "n0m3l0", "proyectoweb");
 	$id=$_GET['CURP'];
-	
+
+	if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
+		session_destroy();
+		session_unset();
+	}
+	$_SESSION['LAST_ACTIVITY'] = time();
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="../js/jquery-3.6.4.min.js" type="text/javascript"></script>
 	<title>Registros</title>
 </head>
 <body>
