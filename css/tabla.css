@@ -1,0 +1,68 @@
+body {
+    background-image: url("../img/b-admin.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+   
+}
+
+
+.tabla{
+   
+        background-color: rgba(28, 33, 51, 0.6);
+        height:auto;
+        width: auto;
+        margin-top: 2em;
+        display: block;
+    
+   
+
+}
+.titulo{
+    color: #fdd700;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 3vw;
+    text-align: center;
+}
+
+.colum{
+    overflow: hidden;
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.5vw;
+}
+
+td{
+    color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.2vw;
+}
+
+#operacion{
+    color: #ffffff;
+    width: auto;
+}
+
+@media screen and (max-width: 768px) {
+    td{
+        font-size: 2.5vw;
+    }
+
+    .titulo{
+        font-size: 3vw;
+    }
+
+    .colum{
+        font-size: 3vw;
+    }
+
+    .boton {
+        width: 15vw;
+        overflow: hidden;
+    }
+    .tabla{
+        margin:1em;
+    }
+}

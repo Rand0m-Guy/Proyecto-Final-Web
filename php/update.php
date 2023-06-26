@@ -23,18 +23,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../css/tabla.css"/>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&family=Sacramento&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="../js/jquery-3.6.4.min.js" type="text/javascript"></script>
 	<title>Registros</title>
 </head>
 <body>
-	<table style="margin: 0 auto;" border="1">
+<div  class="d-flex justify-content-center">
+	<table class="table table-responsive tabla border border-white	">
 		<form action="updateproc.php?function=add&id_pag=1" method="POST">
 		<tr>
-			<th colspan="9">Tabla de actualización</th>
+			<th colspan="9" class="titulo">Tabla de actualización</th>
 		</tr>
-		<tr>
+		<tr class="colum">
 			<th>CURP</th>
 			<th>FechaEvento</th>
 			<!-- <th>HoraInicio</th> -->
@@ -64,7 +69,7 @@
 			<td><input type="text" name="npers" value="<?php echo $show['numPersonas']?>"></td>
 			<td><input type="text" name="menu" value="<?php echo $show['Menu']?>"></td>
 			<td><input type="text" name="lugar" value="<?php echo $show['Lugar']?>"></td>
-			<td><input type="submit" name="update" id="update" value="Actualizar"></td>
+			<td><input type="submit" name="update" id="update" class="btn btn-primary boton" value="Actualizar"></td>
 
 		</tr>
 			<?php
@@ -72,6 +77,7 @@
 			?>
 		</form>
 	</table>
+</div>
 	<script src="../js/actualizacionDinamica.js"></script>
 
 </body>

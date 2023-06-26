@@ -1,0 +1,315 @@
+body {
+    background-image: url("../img/b-validar.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 4.5vw;
+}
+
+h2 {
+    margin-top: 1rem;
+    color: #26BFC7;
+    font-size: 2.7vw;
+}
+
+hr {
+    width: 35vw;
+    height: 1px;
+    margin: auto;
+    color: #FFF;
+}
+
+.titulo {
+    border-color: none;
+    color: #fdd700;
+    font-family: 'Quicksand', sans-serif;
+    text-shadow: 0vw 4vw 4vw 0vw rgba(0, 0, 0);
+}
+
+.subtitulo {
+    margin-left: 2rem;
+}
+
+.contenedor {
+    border-radius: 10px;
+    background-color: rgba(28, 33, 51, 0.6);
+    backdrop-filter: blur(15px);
+    box-sizing: border-box;
+    display: block;
+    width: 60vw;
+    margin: auto;
+    overflow: hidden;
+}
+
+.sec {
+    border-radius: 15px;
+    border: 1px solid #7D4691;
+    margin: auto;
+    height: auto;
+    width: 50vw;
+    display: block;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.folio {
+    text-align: center;
+}
+
+.datos {
+    margin-left: 1rem;
+    color: #FFF;
+    font-size: 1em;
+}
+
+body {
+    background-image: url("../img/b-validar.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 4.5vw;
+}
+
+h2 {
+    margin-top: 1rem;
+    color: #26BFC7;
+    font-size: 2.7vw;
+}
+
+hr {
+    width: 35vw;
+    height: 1px;
+    margin: auto;
+    color: #FFF;
+}
+
+.titulo {
+    border-color: none;
+    color: #fdd700;
+    font-family: 'Quicksand', sans-serif;
+    text-shadow: 0vw 4vw 4vw 0vw rgba(0, 0, 0);
+}
+
+.subtitulo {
+    margin-left: 2rem;
+}
+
+.contenedor {
+    border-radius: 10px;
+    background-color: rgba(28, 33, 51, 0.6);
+    backdrop-filter: blur(15px);
+    box-sizing: border-box;
+    display: block;
+    width: 60vw;
+    margin: auto;
+    overflow: hidden;
+}
+
+#sec {
+    border-radius: 15px;
+    border: 1px solid #7D4691;
+    margin: auto;
+    height: auto;
+    width: 50vw;
+    display: block;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.folio {
+    text-align: center;
+}
+
+.datos {
+    margin-left: 1rem;
+    color: #FFF;
+    font-size: 1em;
+}
+
+.boton {
+    background: #26BFC7;
+    border-radius: 10px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    justify-content:center;
+    font-family: 'Quicksand', sans-serif;
+    width: 15vw;
+    overflow: hidden;
+}
+@media screen and (max-width: 750px) {
+    .contenedor {
+        height: 80vh !important; 
+        width: 80vw !important;
+    }
+    .sec {      
+        width: 60vw !important;
+        height: auto;
+    }
+    .datos{
+        font-size: 1.2vw;
+    }
+    h1 {
+        font-size: 4vw;
+    }
+
+    h2 {
+        font-size: 2vw;
+    }
+    .boton{
+        width: 20vw;
+    }
+    }
+    @media screen and (max-width: 700px) {
+        .contenedor {
+            height: 80vh !important; 
+            width: 80vw !important;
+        }
+        .sec {      
+            width: 60vw !important;
+            height: auto;
+        }
+        .datos{
+            font-size: 1.5vw;
+        }
+        h1 {
+            font-size: 4vw;
+        }
+    
+        h2 {
+            font-size: 2vw;
+        }
+        .boton{
+            width: 20vw;
+        }
+        }
+    
+    @media screen and (max-width: 600px) {
+        .contenedor {
+            height: 80vh !important; 
+            width: 70vw !important;
+        }
+        .sec {      
+            width: 60vw !important;
+            height: 40vh;
+        }
+        .datos{
+            font-size: 1.5vw;
+        }
+        h1 {
+            font-size: 4vw;
+        }
+    
+        h2 {
+            font-size: 2vw;
+        }
+        .boton{
+            width: 20vw;
+        }
+        }
+
+    @media screen and (max-width: 540px) {
+        .contenedor {
+            height: 80vh !important; 
+            width: 80vw !important;
+        }
+        .sec {      
+            width: 60vw !important;
+            height: auto;
+        }
+        .datos{
+            font-size: 2vw;
+        }
+        h1 {
+            font-size: 5vw;
+        }
+    
+        h2 {
+            font-size: 3.5vw;
+        }
+        .boton{
+            width: 20vw;
+        }
+        }
+
+        @media screen and (max-width: 450px) {
+            .contenedor {
+                height: 80vh !important; 
+                width: 80vw !important;
+            }
+            .sec {      
+                width: 60vw !important;
+                height:40vh;
+            }
+            .datos{
+                font-size: 2.5vw;
+            }
+            h1 {
+                font-size: 5vw;
+            }
+        
+            h2 {
+                font-size: 3.5vw;
+            }
+            .boton{
+                width: 20vw;
+            }
+            }
+    
+
+    @media screen and (max-width: 400px) {
+        .contenedor {
+            height: 80vh !important; 
+            width: 90vw !important;
+        }
+        .sec {      
+            width: 85vw !important;
+            height: auto;
+        }
+        .datos{
+            font-size: 3vw;
+        }
+        h1 {
+            font-size: 5vw;
+        }
+    
+        h2 {
+            font-size: 4vw;
+        }
+        .boton{
+            width: 25vw;
+        }
+        }
+        @media screen and (max-width: 335px) {
+            .contenedor {
+                height: 80vh !important; 
+                width: 90vw !important;
+            }
+            .sec {      
+                width: 80vw !important;
+                height: auto;
+            }
+            .datos{
+                font-size: 3.5vw;
+            }
+            h1 {
+                font-size: 6vw;
+            }
+        
+            h2 {
+                font-size: 5vw;
+            }
+            .boton{
+                width: 25vw;
+            }
+            }
