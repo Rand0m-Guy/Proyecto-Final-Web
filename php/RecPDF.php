@@ -1,4 +1,8 @@
 <?php
+	if ( !($_GET['function']='add' && $_GET['id_pag'])){
+		header("Location: ../index.html");
+		exit;
+	}
 	 $estados=array('aguascalientes'=>'Aguascalientes','bajacalifornia'=>'Baja California','bajacaliforniasur'=>'Baja California Sur','campeche'=>'Campeche','chiapas'=>'Chiapas','chihuahua'=>'Chihuahua','cdmx'=>'CDMX','coahuila'=>'Coahuila','colima'=>'Colima','durango'=>'Durango','guanajuato'=>'Guanajuato','guerrero'=>'Guerrero','hidalgo'=>'Hidalgo','jalisco'=>'Jalisco','edomex'=>'Estado de México','michoacan'=>'Michoacán','morelos'=>'Morelos','nayarit'=>'','nuevoleon'=>'Nuevo León','oaxaca'=>'Oaxaca','puebla'=>'Puebla','queretaro'=>'Querétaro','quintanaroo'=>'Quintana Roo','sanluispotosi'=>'San Luis Potosí','sinaloa'=>'Sinaloa','sonora'=>'Sonora','tabasco'=>'Tabasco','tamaulipas'=>'Tamaulipas','tlaxcala'=>'Tlaxcala','veracruz'=>'Veracruz','yucatan'=>'Yucatán','zacatecas'=>'Zacatecas');
 
 	$alcaldias = array('alvaroobregon' =>'Álvaro Obregón','azcapotzalco' =>'Azcapotzalco','bj' =>'Benito Juárez','coyoacan' =>'Coyoacán','cuajimalpa' =>'Cuajimalpa','cuauhtemoc' =>'Cuauhtémoc','madero' =>'Gustavo A. Madero','iztacalco' =>'Iztacalco','iztapalapa' =>'Iztapalapa','mcontreras' =>'Magdalena Contreras','hidalgo' =>'Miguel Hidalgo','malta' =>'Milpa Alta','tlahuac' =>'Tláhuac','tlalpan' =>'Tlalpan','carranza' =>'Venustiano Carranza','xochimilco' =>'Xochimilco', 'ninguno'=>'Ninguna alcaldia' );
@@ -12,7 +16,7 @@
 
     $folio=$_REQUEST['folio'];
 
-    $conexion = mysqli_connect("localhost","root", "","proyectoweb");
+    $conexion = mysqli_connect("localhost","root", "n0m3l0","proyectoweb");
 
     $selectContratacion = "SELECT * FROM Contratacion WHERE Folio='$folio'";
     $resultado = mysqli_query($conexion, $selectContratacion);
@@ -61,7 +65,7 @@
 			$_SESSION['lugarimg']="jardin-0.jpg";
 		}
 		// RUTA A PDF
-		header("Location: ../pdf.php");
+		header("Location: pdf.php?function=add&id_pag=1");
 	}
      
 ?>

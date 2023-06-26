@@ -5,7 +5,7 @@ function cerrarSesion() {
         cache: false,
         success: function() {
             // Redireccionar a otra página después de cerrar la sesión
-            window.location.href = "../html/Principal.html";
+            window.location.href = "../index.html";
         }
     });
 }

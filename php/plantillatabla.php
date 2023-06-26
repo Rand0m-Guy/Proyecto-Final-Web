@@ -1,7 +1,7 @@
 <?php
-	$conexion=mysqli_connect("localhost", "root", "", "proyectoweb");
+	$conexion=mysqli_connect("localhost", "root", "n0m3l0", "proyectoweb");
 	if ( !($_GET['function']='add' && $_GET['id_pag'])){
-        header("Location: ../html/Principal.html");
+        header("Location: ../index.html");
         exit;
     }
 
@@ -9,7 +9,7 @@
 	$validacion = $_SESSION['valid'];
 	if($validacion != "16022236204009818131831320183") {
 		session_destroy();
-		header("Location: ../html/Principal.html");
+		header("Location: ../index.html");
 	}
 
 	if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
@@ -23,6 +23,7 @@
 <head>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="../css/tabla.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/styles.css"/>
 	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&family=Sacramento&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
 	<meta charset="utf-8">
@@ -84,7 +85,7 @@
 
 	</table>
 	</div>
-	<iframe id="iframeCrear" src="../html/formModificado.html" style="display: none;margin: 0 auto;" width="500px" height="500px" align="center"; ></iframe>
+	<iframe id="iframeCrear" src="formModificado.php?function=add&id_pag=1" style="display: none;margin: 0 auto;" width="500px" height="500px" align="center"; ></iframe>
 	<!-- >Scripts auixilares para los vinculos<!--> 
 	<script>
 		function mostrarIframe() {
@@ -96,6 +97,7 @@
 			}
 		}
 	</script>
-	<a href=# onclick="cerrarSesion()"><button>Regresar</button></a>
+	<br>
+	<a href=# onclick="cerrarSesion()"><button class="boton-submit  position-absolute  start-50 translate-middle-x">Regresar</button></a>
 </body>
 </html>

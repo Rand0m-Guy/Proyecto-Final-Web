@@ -1,4 +1,8 @@
 <?php
+	if ( !($_GET['function']='add' && $_GET['id_pag'])){
+		header("Location: ../index.html");
+		exit;
+	}
 $nombre=$_REQUEST['nombre'];
 $appat=$_REQUEST['apellidoP'];
 $apmat=$_REQUEST['apellidoM'];
@@ -44,12 +48,56 @@ $folio=$curp.$fecha;
 //variable para guardar el municipio o alcaldía en la DB
 $alc_mun;
 $evt;
-echo "<body style='background-color:D5B5F7'>";
-echo "<h1 style='display:block'>Datos Agregados</h1>";
-echo "<h2><span style='color:red'>Folio: </span> $folio</h2>";
-echo "<h2>Datos del evento</h2>";
-echo "<p><b>Fecha del evento: </b> $fecha <br>";
-echo "Hora de inicio: ".$horario. " p.m<br>";
+echo "<head>";
+	echo '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">';
+	echo '<link rel="stylesheet" type="text/css" href="../css/validar.css">';
+	echo '<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&family=Sacramento&display=swap" rel="stylesheet">';
+	echo '<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">';
+	echo '<title>Evento Agendado</title>';
+	echo '<meta content="width=device-width, initial-scale=1" name="viewport" />';
+	echo "</head>";
+
+	echo "<body>";
+echo "<h1 class='titulo'>Revisa tus datos</h1>";
+
+echo "<div class='contenedor container flex-column d-flex mb-3'>";// div principal
+	echo "<h2 class='folio'>Folio: <span >$folio</span> </h2>";
+		echo '<section class="sec  container ">'; // section para datos del cliente
+	
+			echo "<h2 class='subtitulo'>Tus datos</h2>";
+			echo '<div class="datos">';
+				echo "<b>Nombre:</b> $nombre $appat $apmat <br>";
+				echo "CURP: $curp <br>";
+				echo "Correo: $mail <br> Telefono: $tel <br>";
+
+				echo '<hr class="">';
+
+				echo "<b>Dirección</b><br>";
+				echo "<ul>";
+				echo "<li>Calle: $calle <br></li>";
+				echo "<li>Colonia: $colonia <br></li>";
+				echo "<li>Entidad federativa: $estado <br></li>";
+
+				//para saber si es municipio o alcaldía
+				if (empty($municipio)) {
+					echo "<li>Alcaldía: $alcald</li>";
+					$alc_mun=$alcald;
+				}else{
+					echo "<li>Municipio: $municipio </li>";
+					$alc_mun=$municipio;
+				}
+				echo "</ul>";
+			echo '</div>';
+			
+		echo "</section>";	
+
+		echo '<section class="sec" >'; // contenedor para datos del evento		
+
+			echo "<h2 class='subtitulo'>Datos del evento</h2>";
+			echo '<div class="datos">';	
+					echo "<p><b>Fecha del evento: </b> $fecha <br>";
+					echo "Hora de inicio: ".$horario. "<br>";
+
 if($menu=='ejecutivo')
 {
 	$opmenu="Ejecutivo";
@@ -73,7 +121,7 @@ elseif ($lugar=='salonb') {
 }
 if(empty($otrot))
 {
-		switch($tipo)
+	switch($tipo)
 	{
 		case "cumple":
 			$evt="Cumpleaños";
@@ -94,18 +142,19 @@ if(empty($otrot))
 }else{
 	$evt=$otrot;
 }
+
 echo "Numero de personas: $nump <br>";
-echo "Menu: $menu <br>";
+echo "Menu: $menus[$menu] <br>";
 echo "<h2>Datos del cliente</h2>Nombre: $nombre $appat $apmat <br>";
 echo "<b>Dirección</b><br>";
 echo "<ul>";
 echo "<li>Calle: $calle <br></li>";
 echo "<li>Colonia: $colonia <br></li>";
-echo "<li>Entidad federativa: $estado <br></li>";
+echo "<li>Entidad federativa: $estados[$estado] <br></li>";
 
 //para saber si es municipio o alcaldía
 if (empty($municipio)) {
-	echo "<li>Alcaldía: $alcald</li>";
+	echo "<li>Alcaldía: $alcaldias[$alcald]</li>";
 	$alc_mun=$alcald;
 }else{
 	echo "<li>Municipio: $municipio </li>";
@@ -148,11 +197,19 @@ $_SESSION['lugarimg']=$fotolugar;
 $_SESSION['tipod']=$tipo;
 $_SESSION['tipootro']=$otrot;
 ?>
-<a href="../html/formModificado.html">
-	<button>Modificar</button>
-</a>
-<a href="regbd.php?function=add&id_pag=1">
-	<button>Confirmar</button>
-</a>
+<div class="d-grid gap-2 mx-auto position-relative mx-auto">
+    <div class="d-flex justify-content-center">
+        <div class="btn text-wrap">
+            <a href="modreg.php?function=add&id_pag=1">
+                <button class="boton mx-xxl-5">Modificar</button>
+            </a>
+        </div>
+        <div class="btn text-wrap">
+            <a href="regbd.php?function=add&id_pag=1">
+                <button class="boton mx-xxl-5">Confirmar</button>
+            </a>
+        </div>
+    </div>
+</div>
 <script src="../js/actualizacionDinamica.js"></script>
 

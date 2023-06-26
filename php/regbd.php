@@ -16,7 +16,7 @@
 <body>
 <?php
         if ( !($_GET['function']='add' && $_GET['id_pag'])){
-            header("Location: ../html/Principal.html");
+            header("Location: ../index.html");
             exit;
         }
         session_start();
@@ -46,7 +46,7 @@
         $estadoPdf=$_SESSION['estadopdf'];
         $lugarimg=$_SESSION['lugarimg'];
         $lugarpf=$_SESSION['lugarpf'];
-        $conexion = mysqli_connect("localhost","root", "","proyectoweb");
+        $conexion = mysqli_connect("localhost","root", "n0m3l0","proyectoweb");
 
 
         $selectCliente = "SELECT CURP FROM CLIENTE WHERE CURP='$curp'";
@@ -69,10 +69,10 @@
                 <div class="d-flex justify-content-center">
                     <div class="d-grid gap-2 col-6 mx-auto position-relative mx-auto">
                         <div class="btn text-wrap btn-sm">
-                            <a href="../pdf.php"><button class="boton">Generar PDF</button></a>
+                            <a href="pdf.php?function=add&id_pag=1" target="_blank"><button class="boton">Generar PDF</button></a>
                         </div>
                         <div class="btn text-wrap ">
-                            <a href="../html/Principal.html" onclick="cerrarSesion()"><button class="boton" >Regresar</button></a>
+                            <a href="../index.html" onclick="cerrarSesion()"><button class="boton" >Regresar</button></a>
                         </div>
                     </div>
                 </div>

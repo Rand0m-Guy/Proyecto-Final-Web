@@ -1,6 +1,6 @@
 <?php
     if ( !($_GET['function']='add' && $_GET['id_pag'])){
-        header("Location: ../html/Principal.html");
+        header("Location: ../index.html");
         exit;
     }
 ?>
@@ -27,7 +27,7 @@
           </video>
             <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary  navbar-dark bg-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="../html/Principal.html">Rythm</a>
+                    <a class="navbar-brand" href="../index.html">Rythm</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>
@@ -51,11 +51,11 @@
         <main>
             <section class=" contenedor w-75 p-3 container my-4 position-relative" id="contComprobante" >
                 <h1>Comprobante</h1>                
-                <form action="RecPDF.php?function=add&id_pag=1" method="post" id="recuperarComprobante" name="recuperarComprobante">
+                <form action="RecPDF.php?function=add&id_pag=1" method="post" id="recuperarComprobante" name="recuperarComprobante" target="_blank">
                     <fieldset>
                         <div class="recuperar">
                             <label for="folio"><p>En caso de haber perdido tu comprobante al generar la cita  puedes recuperarlo ingresando tu <span>CURP</span> y la <span>fecha del evento</span></p></label>
-                            <input id="folio" name="folio" type="text" placeholder="Ejem.PEBJ031015HDFRRNA9-10-05-2023" class="input-group mb-3" required><br><br>
+                            <input id="folio" name="folio" type="text" placeholder="Ejem.PEBJ031015HDFRRNA910-05-2023" class="input-group mb-3" required><br><br>
                         </div>
                     </fieldset>
                     <input type="submit" id="botonComprobante" class="boton-submit position-absolute  start-50 translate-middle-x" value="Generar comprobante"></input>
