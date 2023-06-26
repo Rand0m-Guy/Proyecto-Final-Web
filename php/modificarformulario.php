@@ -1,4 +1,8 @@
 <?php
+if ( !($_GET['function']='add' && $_GET['id_pag'])){
+    header("Location: ../index.html");
+    exit;
+}
     session_start();
     $curp=$_SESSION['curp'];
     $folio=$_SESSION['folio'];
@@ -42,7 +46,7 @@ echo "<!DOCTYPE html>
       </video>
         <nav class='navbar sticky-top navbar-expand-lg bg-body-tertiary  navbar-dark bg-dark'>
             <div class='container-fluid'>
-                <a class='navbar-brand' href='../html/Principal.html'>Rythm</a>
+                <a class='navbar-brand' href='../index.html'>Rythm</a>
                 <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
                 <span class='navbar-toggler-icon'></span>
                 </button>

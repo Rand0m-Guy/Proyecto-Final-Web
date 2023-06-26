@@ -1,5 +1,8 @@
 <?php
-
+if ( !($_GET['function']='add' && $_GET['id_pag'])){
+    header("Location: ../index.html");
+    exit;
+}
 session_start();
 $folio=$_SESSION['folio'];
 $nombre=$_SESSION['nombre'];
@@ -63,7 +66,7 @@ class PDF extends PDF_Rotate {
     function Header()
     {
         // Logo
-        $this->Image('img/icon-negro.png',10,8,20);
+        $this->Image('../img/icon-negro.png',10,8,20);
         // Salto de Línea
         $this->Ln(20);
         $this->AddFont('Sacramento','','Sacramento-Regular.php');

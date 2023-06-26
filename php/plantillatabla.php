@@ -1,7 +1,7 @@
 <?php
-	$conexion=mysqli_connect("localhost", "root", "", "proyectoweb");
+	$conexion=mysqli_connect("localhost", "root", "n0m3l0", "proyectoweb");
 	if ( !($_GET['function']='add' && $_GET['id_pag'])){
-        header("Location: ../html/Principal.html");
+        header("Location: ../index.html");
         exit;
     }
 
@@ -9,7 +9,7 @@
 	$validacion = $_SESSION['valid'];
 	if($validacion != "16022236204009818131831320183") {
 		session_destroy();
-		header("Location: ../html/Principal.html");
+		header("Location: ../index.html");
 	}
 
 	if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
@@ -85,7 +85,7 @@
 
 	</table>
 	</div>
-	<iframe id="iframeCrear" src="../html/formModificado.html" style="display: none;margin: 0 auto;" width="500px" height="500px" align="center"; ></iframe>
+	<iframe id="iframeCrear" src="formModificado.php?function=add&id_pag=1" style="display: none;margin: 0 auto;" width="500px" height="500px" align="center"; ></iframe>
 	<!-- >Scripts auixilares para los vinculos<!--> 
 	<script>
 		function mostrarIframe() {

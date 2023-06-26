@@ -1,6 +1,6 @@
 <?php
 if ( !($_GET['function']='add' && $_GET['id_pag'])){
-	header("Location: ../html/Principal.html");
+	header("Location: ../index.html");
 	exit;
 }
 $nombre=$_REQUEST['nombre'];
@@ -201,7 +201,7 @@ $_SESSION['tipootro']=$otrot;
 <div class="d-grid gap-2 mx-auto position-relative mx-auto">
     <div class="d-flex justify-content-center">
         <div class="btn text-wrap">
-            <a href="modreg.php">
+            <a href="modreg.php?function=add&id_pag=1">
                 <button class="boton mx-xxl-5">Modificar</button>
             </a>
         </div>

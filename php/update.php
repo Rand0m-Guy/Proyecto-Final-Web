@@ -1,6 +1,6 @@
 <?php
 	if ( !($_GET['function']='add' && $_GET['id_pag'])){
-        header("Location: ../html/Principal.html");
+        header("Location: ../index.html");
         exit;
     }
 
@@ -8,10 +8,10 @@
 	$validacion = $_SESSION['valid'];
 	if($validacion != "16022236204009818131831320183") {
 		session_destroy();
-		header("Location: ../html/Principal.html");
+		header("Location: ../index.html");
 	}
 	
-	$conexion=mysqli_connect("localhost", "root", "", "proyectoweb");
+	$conexion=mysqli_connect("localhost", "root", "n0m3l0", "proyectoweb");
 	$id=$_GET['CURP'];
 
 	if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {

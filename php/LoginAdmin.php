@@ -1,11 +1,11 @@
 <?php
 if ( !($_GET['function']='add' && $_GET['id_pag'])){
-	header("Location: ../html/Principal.html");
+	header("Location: ../index.html");
 	exit;
 }
 $user=$_POST['usuario']; 
 $password=$_POST['contra']; 
-$conexion=mysqli_connect("localhost","root", "","proyectoweb"); 
+$conexion=mysqli_connect("localhost","root", "n0m3l0","proyectoweb"); 
 $consulta="SELECT * FROM admon where Pass='$password'"; 
 $resultado=mysqli_query($conexion,$consulta);
 $registros=mysqli_num_rows($resultado);
