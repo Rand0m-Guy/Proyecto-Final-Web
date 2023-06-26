@@ -1,6 +1,6 @@
 function cerrarSesion() {
     $.ajax({
-        url: "../php/cerrarSession.php",
+        url: "../php/cerrarSession.php?function=add&id_pag=1",
         type: "POST",
         cache: false,
         success: function() {
